@@ -7,6 +7,11 @@ import {
   stringtoDate,
 } from "../utils/string.manipulation";
 
+/**
+ * returns a component from given paramiters `param0`
+ * @param {*} listofparams
+ * @returns {any}
+ */
 export default function GeneralChart({ params, ...rest }) {
   const ref = createRef();
 

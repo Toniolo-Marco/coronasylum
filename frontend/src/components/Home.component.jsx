@@ -2,18 +2,10 @@ import React from "react";
 import GeneralChart from "./general.components.jsx";
 //import Button from "react-bootstrap/Button";
 import MyNavbar from "../prefabs/Navbar.prefabs.jsx";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import styles from "../scss/global.module.scss";
 
 export default function Home() {
   return (
     <div>
-      
       <MyNavbar />
       <h1>Home</h1>
       <h6>

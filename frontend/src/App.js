@@ -7,7 +7,7 @@ import CallBackend from "./components/backend.components";
 import GeneralChart from "./components/general.components";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./components/Home.component";
-import styles from "./scss/global.module.scss";
+import { ColorStyle, TextStyle } from "./index.import";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -18,16 +18,16 @@ function App() {
   useEffect(() => setTimeout(() => setNumber(number + 1), 1000), [number]);
 
   return (
-    <div className={styles.bgBlack}>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        {/*
+    <div className={ColorStyle.bgBlack}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          {/*
         <Route path="/login" component={Login} />
         <Route path="/singin" component={SingIn} />
         */}
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
     </div>
   );
   /*
