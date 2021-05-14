@@ -9,7 +9,7 @@ const cors = require("cors");
 const { default: buildQuery, getData } = require("./services/services.query");
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: [/http:\/\/localhost(?::\d{1,5})?/]
 };
 
 app.use(cors(corsOptions));

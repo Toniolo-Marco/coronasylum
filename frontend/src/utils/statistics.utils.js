@@ -1,11 +1,7 @@
 import axios from "axios";
-import {
-  stringtoDate,
-  stringtoShortDate,
-  datetoShortDate,
-} from "./string.manipulation";
+import { stringtoDate} from "../index.import";
 
-export async function downloadData(query) {
+export default async function downloadData(query) {
   var ret = undefined;
   const xs = [];
   const ys = [];
@@ -14,7 +10,7 @@ export async function downloadData(query) {
   //https://api.covid19api.com/dayone/country/italy/status/confirmed
   /*Prende solo da paesi!!!*/
   await axios
-    .get("http://localhost:5000/api/data?country=" + query.country)
+    .get("http://localhost:5000/api/data?country=" + query.country + "&" + query.casetype)
     .then((res) => {
       console.log(res.data);
       const arr = res.data;

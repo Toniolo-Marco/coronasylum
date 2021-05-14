@@ -1,12 +1,5 @@
-import React, { createRef, useEffect, useRef, useState } from "react";
 import Chart from "chart.js";
-import { downloadData } from "../utils/statistics.utils";
-import {
-  datetoShortDate,
-  monthtoString,
-  stringtoDate,
-} from "../utils/string.manipulation";
-
+import { React, useEffect, createRef, downloadData, TextStyle, monthtoString, datetoShortDate, stringtoDate} from "../index.import";
 /**
  * returns a component from given paramiters `param0`
  * @param {*} listofparams
@@ -53,7 +46,7 @@ export default function GeneralChart({ params, ...rest }) {
               },
               label: function (tooltipItems) {
                 //Return value for label
-                return params.casetype + ": " + tooltipItems.yLabel;
+                return params.status + ": " + tooltipItems.yLabel;
               },
             },
           },

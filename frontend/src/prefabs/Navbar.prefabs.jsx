@@ -6,27 +6,27 @@ import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/esm/NavDropdown";
 
-export default function MyNavbar() {
+export default function Navbar() {
   return (
     <React.Fragment>
       <div>
         <NB bg="primary" variant="dark" sticky="top">
-          <NB.Brand href="#home">CoronaSylum</NB.Brand>
+          <NB.Brand href="/">CoronAsylum</NB.Brand>
           <Nav className="mr-auto">
             <Nav.Item>
-              <Nav.Link href="#covid">Covid-19</Nav.Link>
+              <Nav.Link href="/Covid19">Covid-19</Nav.Link>
             </Nav.Item>
-            <NavDropdown title="About" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1">API</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.2">Database</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.3">Me</NavDropdown.Item>
+            <NavDropdown href="/about" title="About" id="nav-dropdown">
+              <NavDropdown.Item eventKey="4.1" href="/about/API">API</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.2" href="/about/Database">Database</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.3" href="/about/Developer">Developer</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey="4.4">
                 View all Documentation
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Item>
-              <Nav.Link href="#contacts">Contacts</Nav.Link>
+              <Nav.Link href="/Contacts">Contacts</Nav.Link>
             </Nav.Item>
           </Nav>
 

@@ -49,3 +49,4 @@ export function monthtoString(d) {
   month[11] = "Novembre";
   return month[d];
 }
+

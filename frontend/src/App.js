@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Counter from "./components/counter.components";
-import { inttoString } from "./utils/string.manipulation";
-import { downloadData } from "./utils/statistics.utils";
-import MyChart from "./components/chart";
-import CallBackend from "./components/backend.components";
-import GeneralChart from "./components/general.components";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Home from "./components/Home.component";
-import { ColorStyle, TextStyle } from "./index.import";
+import { React, useEffect, useState, Home, About, API, Contacts, Covid19, Developer, Database, ColorStyle, TextStyle} from "./index.import";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 
 //const JsonFile = CreateJsonChart(500, 250, "description");
 
@@ -22,6 +13,15 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/about/API" component={API} />
+          <Route exact path="/Contacts" component={Contacts} />
+          <Route exact path="/Covid19" component={Covid19} />
+          <Route exact path="/about/Developer" component={Developer} />
+          <Route exact path="/about/Database" component={Database} />
+
+
+
           {/*
         <Route path="/login" component={Login} />
         <Route path="/singin" component={SingIn} />
