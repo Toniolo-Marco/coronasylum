@@ -1,10 +1,13 @@
-import React from "react";
+import {
+  React,
+  Nav,
+  Button,
+  NavDropdown,
+  NavbarStyle,
+  useState,
+  Dropdown,
+} from "../index.import";
 import NB from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
-import NavDropdown from "react-bootstrap/esm/NavDropdown";
 
 export default function Navbar() {
   return (
@@ -16,10 +19,21 @@ export default function Navbar() {
             <Nav.Item>
               <Nav.Link href="/Covid19">Covid-19</Nav.Link>
             </Nav.Item>
-            <NavDropdown href="/about" title="About" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1" href="/about/API">API</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.2" href="/about/Database">Database</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.3" href="/about/Developer">Developer</NavDropdown.Item>
+            <NavDropdown
+              className={`${NavbarStyle.navitem} ${NavbarStyle.dropdownmenu}`}
+              href="/about"
+              title="About"
+              id="nav-dropdown"
+            >
+              <NavDropdown.Item eventKey="4.1" href="/about/API">
+                API
+              </NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.2" href="/about/Database">
+                Database
+              </NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.3" href="/about/Developer">
+                Developer
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey="4.4">
                 View all Documentation
@@ -47,5 +61,20 @@ export default function Navbar() {
       </div>
       <br />
     </React.Fragment>
+  );
+}
+
+function HoverControlledDropdown(props) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  return (
+    <Dropdown
+      {...props}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onToggle={() => setIsClicked(!isClicked)}
+      show={isClicked || isHovered}
+    />
   );
 }

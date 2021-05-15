@@ -1,5 +1,14 @@
 import Chart from "chart.js";
-import { React, useEffect, createRef, downloadData, TextStyle, monthtoString, datetoShortDate, stringtoDate} from "../index.import";
+import {
+  React,
+  useEffect,
+  createRef,
+  downloadData,
+  TextStyle,
+  monthtoString,
+  datetoShortDate,
+  stringtoDate,
+} from "../index.import";
 /**
  * returns a component from given paramiters `param0`
  * @param {*} listofparams
@@ -69,7 +78,5 @@ export default function GeneralChart({ params, ...rest }) {
       });
     });
   }, []);
-  return (
-    <canvas id="customizeChart" width="200" height="100" ref={ref}></canvas>
-  );
+  return <canvas id="customizeChart" ref={ref}></canvas>;
 }
