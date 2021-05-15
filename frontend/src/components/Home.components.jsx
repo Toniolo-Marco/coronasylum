@@ -107,7 +107,7 @@ export default function Home() {
           </Col>
           <Col xs={6}>
             <h3 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
-              Cartesian:
+              Histogram:
             </h3>
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               compare total cases, recovered and deaths
