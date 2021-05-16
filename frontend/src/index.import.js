@@ -29,6 +29,7 @@ export { default as NavbarStyle } from "./scss/navbar.module.scss";
 
 //components
 export { default as Chart } from "./components/chart.components";
+export { default as Histogram } from "./components/histogram.components";
 export { default as Counter } from "./components/counter.components";
 
 //pages

@@ -12,6 +12,7 @@ import {
   FormControl,
   InputGroup,
   SearchIcon,
+  Histogram
 } from "../index.import.js";
 //import Button from "react-bootstrap/Button";
 
@@ -128,6 +129,28 @@ export default function Home() {
                 },
               }}
             />
+
+
+
+
+            {/*
+            <Chart
+              params={{
+                country: "Italy",
+                type: "bar",
+                title: "Covid in Italy Today",
+                label: ["confirmed","Recovered",],
+                backgroundColor: "rgba(0,123,252,0.5)",
+                borderColor: "rgba(0,123,252,1)",
+                
+                responsive: true,
+                tooltips: {
+                  enabled: true,
+                  intersect: false,
+                },
+              }}
+            />
+            */}
           </Col>
         </Row>
         <br />
