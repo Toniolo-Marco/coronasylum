@@ -101,7 +101,7 @@ export default function Home() {
                 country: "Italy",
 
                 type: "line",
-                label: "Chart of Coronavirus Confirmed Cases in ",
+                label: "Chart of Coronavirus Confirmed Cases in Italy",
                 backgroundColor: "rgba(0,123,252,0.5)",
                 borderColor: "rgba(0,123,252,1)",
                 pointRadius: 0,

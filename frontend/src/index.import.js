@@ -57,6 +57,8 @@ export { inttoString as inttoString } from "./utils/string.manipulation";
 export { stringtoDate as stringtoDate } from "./utils/string.manipulation";
 export { datetoShortDate as datetoShortDate } from "./utils/string.manipulation";
 export { monthtoString as monthtoString } from "./utils/string.manipulation";
+export { dateToMonth as dateToMonth } from "./utils/string.manipulation"
+
 
 //ICONS
 export { GoSearch as SearchIcon } from "react-icons/go";

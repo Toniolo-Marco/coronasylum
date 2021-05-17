@@ -25,7 +25,7 @@ export default function Compound({ query, ...rest }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     downloadData(query).then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       setData(res.data);
     });
   }, []);
@@ -35,6 +35,7 @@ export default function Compound({ query, ...rest }) {
       setIsLoading(false);
     }
   }, [data]);
+
   return (
     <React.Fragment>
       <Row>
@@ -48,7 +49,25 @@ export default function Compound({ query, ...rest }) {
         <React.Fragment>
           <Row>
             <Col>
-              <Chart />
+            
+            <h3 className={`${ColorStyle.colorWhite1}`}>{console.log(data)}</h3>
+              <Chart 
+              params={{
+                category: query.category,
+                status: data.confirmed,
+                country: query.country,
+
+                type: "line",
+                label: "Chart of Coronavirus "+query.status+" cases in "+query.country,
+                backgroundColor: "rgba(0,123,252,0.5)",
+                borderColor: "rgba(0,123,252,1)",
+                pointRadius: 0,
+                responsive: true,
+                tooltips: {
+                  enabled: true,
+                  intersect: false,
+                },
+              }}/>
             </Col>
             <Col>
               <Counter />
