@@ -20,7 +20,7 @@ export default function Today() {
     <React.Fragment>
       <Container fluid>
         {countries.map((e) => {
-          return <Compound query={{ ...e, category: "total" }} />;
+          return <Compound key={e.slug} query={{ ...e, category: "total" }} />;
         })}
       </Container>
     </React.Fragment>
