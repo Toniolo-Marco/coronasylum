@@ -28,7 +28,7 @@ export { default as TextStyle } from "./scss/text.module.scss";
 export { default as GlobalStyle } from "./scss/global.module.scss";
 export { default as NavbarStyle } from "./scss/navbar.module.scss";
 export { default as LoadingStyle } from "./scss/loading.module.scss";
-
+export { default as ImageStyle } from "./scss/img.module.scss";
 //components
 export { default as Chart } from "./components/chart.components";
 export { default as Histogram } from "./components/histogram.components";
