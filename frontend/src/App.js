@@ -12,6 +12,7 @@ import {
   Database,
   ColorStyle,
   TextStyle,
+  Today,
 } from "./index.import";
 
 //const JsonFile = CreateJsonChart(500, 250, "description");
@@ -25,13 +26,13 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/about/API" component={API} />
+          <Route exact path="/About" component={About} />
+          <Route exact path="/About/API" component={API} />
           <Route exact path="/Contacts" component={Contacts} />
           <Route exact path="/Covid19" component={Covid19} />
-          <Route exact path="/about/Developer" component={Developer} />
-          <Route exact path="/about/Database" component={Database} />
-
+          <Route exact path="/About/Developer" component={Developer} />
+          <Route exact path="/About/Database" component={Database} />
+          <Route exact path="/Today" component={Today} />
           {/*
         <Route path="/login" component={Login} />
         <Route path="/singin" component={SingIn} />

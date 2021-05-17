@@ -18,6 +18,7 @@ export {
   Container,
   FormControl,
   InputGroup,
+  Spinner,
 } from "react-bootstrap";
 export { default as Bootstrap } from "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,6 +32,8 @@ export { default as NavbarStyle } from "./scss/navbar.module.scss";
 export { default as Chart } from "./components/chart.components";
 export { default as Histogram } from "./components/histogram.components";
 export { default as Counter } from "./components/counter.components";
+export { default as Loading } from "./components/loading.components";
+export { default as Compound } from "./components/compound.components";
 
 //pages
 export { default as Home } from "./components/Home.components";
@@ -40,6 +43,7 @@ export { default as Database } from "./components/About.Database.components";
 export { default as Developer } from "./components/About.Developer.components";
 export { default as Contacts } from "./components/Contacts.components";
 export { default as Covid19 } from "./components/Covid19.components";
+export { default as Today } from "./components/Today.components";
 
 //prefabs
 export { default as Navbar } from "./prefabs/Navbar.prefabs";

@@ -12,9 +12,9 @@ import {
   FormControl,
   InputGroup,
   SearchIcon,
-  Histogram
+  Histogram,
 } from "../index.import.js";
-//import Button from "react-bootstrap/Button";
+import covidfristimage from "../img/imghome.png";
 
 export default function Home() {
   return (
@@ -24,7 +24,9 @@ export default function Home() {
       <Container fluid>
         <Row>
           <Col xs={1} />
-          <Col></Col>
+          <Col>
+            <img src={covidfristimage} alt={"virus image"} />
+          </Col>
 
           <Col>
             <h1 className={`${ColorStyle.colorWhite1}`}>
@@ -91,8 +93,10 @@ export default function Home() {
             </p>
             <Chart
               params={{
+                category: "dayone",
                 status: "Confirmed",
                 country: "Italy",
+
                 type: "line",
                 label: "Chart of Coronavirus Confirmed Cases in ",
                 backgroundColor: "rgba(0,123,252,0.5)",
@@ -113,36 +117,24 @@ export default function Home() {
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               compare total cases, recovered and deaths
             </p>
-            <Chart
+            <Histogram
               params={{
-                status: "Confirmed",
-                country: "Brazil",
-                type: "line",
-                label: "Chart of Coronavirus Confirmed Cases in ",
-                backgroundColor: "rgba(0,123,252,0.5)",
-                borderColor: "rgba(0,123,252,1)",
-                pointRadius: 0,
-                responsive: true,
-                tooltips: {
-                  enabled: true,
-                  intersect: false,
-                },
-              }}
-            />
-
-
-
-
-            {/*
-            <Chart
-              params={{
+                category: "dayone",
                 country: "Italy",
                 type: "bar",
                 title: "Covid in Italy Today",
-                label: ["confirmed","Recovered",],
-                backgroundColor: "rgba(0,123,252,0.5)",
-                borderColor: "rgba(0,123,252,1)",
-                
+                label: ["Active", "Recovered", "Deaths"],
+                backgroundColor: [
+                  "rgba(0,123,252,0.5)",
+                  "rgba(255, 255, 255,0.5)",
+                  "rgba(255, 51, 51,0.5)",
+                ],
+                borderColor: [
+                  "rgba(0,123,252,1)",
+                  "rgba(255, 255, 255,1)",
+                  "rgba(255, 51, 51,1)",
+                ],
+
                 responsive: true,
                 tooltips: {
                   enabled: true,
@@ -150,7 +142,6 @@ export default function Home() {
                 },
               }}
             />
-            */}
           </Col>
         </Row>
         <br />
