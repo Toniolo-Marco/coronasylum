@@ -11,9 +11,17 @@ export default async function downloadData(query) {
         query.slug
     )
     .then((res) => {
-      console.log(res.data);
-      const arr = res.data;
+      //console.log(res.data);
+      let arr = {};
+      res.data !== undefined ? (arr.data = res.data) : (arr.data = []);
+      if (res.data) {
+        downloadData(query);
+      }
+      return arr;
     })
-    .catch((err) => console.log(err))
+    .catch((err) => {
+      console.log(err);
+      return downloadData(query);
+    })
     .finally();
 }
