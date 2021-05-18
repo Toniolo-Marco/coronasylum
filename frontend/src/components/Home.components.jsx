@@ -13,7 +13,7 @@ import {
   InputGroup,
   SearchIcon,
   Histogram,
-  ImageStyle
+  ImageStyle,
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
 
@@ -26,42 +26,47 @@ export default function Home() {
         <Row>
           <Col xs={1} />
           <Col xs={5}>
-            <img className={`${ImageStyle.imgHome1}`} src={covidfristimage} alt={"virus image"} />
+            <img
+              className={`${ImageStyle.imgHome1}`}
+              src={covidfristimage}
+              alt={"virus image"}
+            />
           </Col>
 
           <Col className={`${TextStyle.txtverticalmiddle}`}>
             <div>
-            <h1 className={`${ColorStyle.colorWhite1}`}>
-              CoronAsylum: From Everywhere To Everyone
-            </h1>
+              <h1 className={`${ColorStyle.colorWhite1}`}>
+                CoronAsylum: From Everywhere To Everyone
+              </h1>
 
-            <h2 className={`${ColorStyle.colorBlue1}`}>—</h2>
+              <h2 className={`${ColorStyle.colorBlue1}`}>—</h2>
 
-            <p
-              className={`${TextStyle.txtcenterjustify} ${ColorStyle.colorGrey5}`}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
-              tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute
-              iure reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
-            <br />
-            <InputGroup className="mb-3">
-              <FormControl
-                placeholder="Search here..."
-                aria-label="Search"
-                aria-describedby="basic-addon2"
-              />
-              <InputGroup.Append>
-                <Button variant="primary">
-                  <SearchIcon />
-                </Button>{" "}
-              </InputGroup.Append>
-            </InputGroup>
+              <p
+                className={`${TextStyle.txtcenterjustify} ${ColorStyle.colorGrey5}`}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed
+                eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrum exercitationem ullam corporis
+                suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+                Quis aute iure reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint obcaecat
+                cupiditat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </p>
+
+              <br />
+              <InputGroup className="mb-3">
+                <FormControl
+                  placeholder="Search here..."
+                  aria-label="Search"
+                  aria-describedby="basic-addon2"
+                />
+                <InputGroup.Append>
+                  <Button variant="primary">
+                    <SearchIcon />
+                  </Button>{" "}
+                </InputGroup.Append>
+              </InputGroup>
             </div>
           </Col>
           <Col xs={1} />
@@ -99,6 +104,7 @@ export default function Home() {
                 category: "dayone",
                 status: "Confirmed",
                 country: "Italy",
+                slug: "italy",
 
                 type: "line",
                 label: "Chart of Coronavirus Confirmed Cases in Italy",
@@ -120,7 +126,7 @@ export default function Home() {
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               compare total cases, recovered and deaths
             </p>
-            <Histogram
+            {/* <Histogram
               params={{
                 category: "dayone",
                 country: "Italy",
@@ -144,7 +150,7 @@ export default function Home() {
                   intersect: false,
                 },
               }}
-            />
+            /> */}
           </Col>
         </Row>
         <br />

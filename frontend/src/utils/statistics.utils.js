@@ -14,11 +14,11 @@ export default async function downloadData(query) {
       //console.log(res.data);
       let arr = {};
       res.data !== undefined ? (arr.data = res.data) : (arr.data = []);
-      if (res.data==[]) {
-        console.log("Errore del backend")
+      if (res.data == []) {
+        console.log("Errore del backend");
         //downloadData(query);
       }
-      return arr;
+      return arr.data;
     })
     .catch((err) => {
       console.log("errore frontend");

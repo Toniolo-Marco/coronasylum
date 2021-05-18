@@ -5,10 +5,7 @@ import {
   createRef,
   downloadData,
   TextStyle,
-  monthtoString,
-  datetoShortDate,
-  stringtoDate,
-  dateToMonth
+  apiDateToMonth,
 } from "../index.import";
 /**
  * returns a component from given paramiters `param0`
@@ -23,6 +20,7 @@ export default function GeneralChart({ params, ...rest }) {
     downloadData(params).then((res) => {
       const data = res;
 
+      console.log(data);
       // console.log("data.xsdates");
       // console.log(data.xsdates);
 
@@ -33,7 +31,7 @@ export default function GeneralChart({ params, ...rest }) {
 
         // The data for our dataset
         data: {
-          labels: dateToMonth(data.Date),
+          labels: dateToMonth(data),
           datasets: [
             {
               label: params.label,
@@ -53,11 +51,11 @@ export default function GeneralChart({ params, ...rest }) {
             callbacks: {
               title: function (tooltipItems) {
                 //Return value for title
-                return datetoShortDate(tooltipItems[0].xLabel);
+                return;
               },
               label: function (tooltipItems) {
                 //Return value for label
-                return params.status + ": " + tooltipItems.yLabel;
+                return;
               },
             },
           },
@@ -65,13 +63,7 @@ export default function GeneralChart({ params, ...rest }) {
             xAxes: [
               {
                 ticks: {
-                  callback: function (value, index, values) {
-                    return (
-                      monthtoString(value.getMonth()) +
-                      " " +
-                      value.getFullYear()
-                    );
-                  },
+                  callback: (data) => apiDateToMonth(data),
                 },
               },
             ],
