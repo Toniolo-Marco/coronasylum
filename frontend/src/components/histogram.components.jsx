@@ -5,9 +5,7 @@ import {
   createRef,
   downloadData,
   TextStyle,
-  monthtoString,
-  datetoShortDate,
-  stringtoDate,
+  apiDateToMonth,
 } from "../index.import";
 
 //https://api.covid19api.com/live/country/south-africa

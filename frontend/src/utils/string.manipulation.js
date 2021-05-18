@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export function inttoString(n) {
   var str = n.toString();
   var s = "";
@@ -13,15 +15,13 @@ export function inttoString(n) {
   }
   return s.split("").reverse().join("");
 }
-import moment from "moment";
 
 export function apiDateToMonth(data) {
   let arr = [];
-  data.forEach((e) => {
-    arr.push(moment(e.Date).format("MMM, yyyy"));
-    //accedo alla data di ogni singolo elemento
-    //creo un oggetto di tipo Date
-    //
-  });
+  if (data) {
+    data.forEach((e) => {
+      arr.push(moment(e.Date).format("MMM, yyyy"));
+    });
+  }
   return arr;
 }

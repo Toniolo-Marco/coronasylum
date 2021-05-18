@@ -25,8 +25,12 @@ export default function Compound({ query, ...rest }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     downloadData(query).then((res) => {
-      //console.log(res.data);
-      setData(res.data);
+      console.log(res.data);
+      let arr = [];
+      if (res.data) {
+        arr = res.data;
+      }
+      setData(arr);
     });
   }, []);
 
@@ -49,45 +53,40 @@ export default function Compound({ query, ...rest }) {
         <React.Fragment>
           <Row>
             <Col>
-            
-            <h3 className={`${ColorStyle.colorWhite1}`}>{console.log(data)}</h3>
-              <Chart 
-              params={{
-                category: query.category,
-                status: data.confirmed,
-                country: query.country,
+              <h3 className={`${ColorStyle.colorWhite1}`}></h3>
 
-                type: "line",
-                label: "Chart of Coronavirus "+query.status+" cases in "+query.country,
-                backgroundColor: "rgba(0,123,252,0.5)",
-                borderColor: "rgba(0,123,252,1)",
-                pointRadius: 0,
-                responsive: true,
-                tooltips: {
-                  enabled: true,
-                  intersect: false,
-                },
-              }}/>
+              <Chart
+                data={data}
+                params={{
+                  category: "total",
+                  status: "Confirmed",
+                  country: query.country,
+
+                  type: "line",
+                  label:
+                    "Chart of Coronavirus Confirmed" +
+                    " cases in " +
+                    query.country,
+                  backgroundColor: "rgba(0,123,252,0.5)",
+                  borderColor: "rgba(0,123,252,1)",
+                  pointRadius: 0,
+                  responsive: true,
+                  tooltips: {
+                    enabled: true,
+                    intersect: false,
+                  },
+                }}
+              />
             </Col>
-            <Col>
-              <Counter />
-            </Col>
+            <Col></Col>
           </Row>
           <Row>
-            <Col>
-              <Chart />
-            </Col>
-            <Col>
-              <Chart />
-            </Col>
-            <Col>
-              <Chart />
-            </Col>
+            <Col></Col>
+            <Col></Col>
+            <Col></Col>
           </Row>
           <Row>
-            <Col>
-              <Histogram />
-            </Col>
+            <Col></Col>
             <Col></Col>
           </Row>
         </React.Fragment>
