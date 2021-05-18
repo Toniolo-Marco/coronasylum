@@ -19,6 +19,7 @@ import {
   useEffect,
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
+import Counter from "./counter.components.jsx";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -197,7 +198,9 @@ export default function Home() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </Col>
-          <Col xs={7}></Col>
+          <Col xs={7}>
+            <Counter />
+          </Col>
           <Col xs={1} />
         </Row>
         <br />
