@@ -1,0 +1,4 @@
+{
+    "mochaExplorer.timeout": 60000,
+    "mochaExplorer.exit": true
+}
