@@ -13,14 +13,12 @@ function callAPI(o) {
 }
 
 exports.getData = async (query) => {
-  console.log(query);
   return await axios
     .get(callAPI(query))
     .then((res) => {
       return res.data;
     })
     .catch((err) => {
-      console.log(err);
       return [];
     });
 };

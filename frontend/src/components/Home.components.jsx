@@ -13,6 +13,7 @@ import {
   InputGroup,
   SearchIcon,
   Histogram,
+  ImageStyle
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
 
@@ -24,11 +25,12 @@ export default function Home() {
       <Container fluid>
         <Row>
           <Col xs={1} />
-          <Col>
-            <img src={covidfristimage} alt={"virus image"} />
+          <Col xs={5}>
+            <img className={`${ImageStyle.imgHome1}`} src={covidfristimage} alt={"virus image"} />
           </Col>
 
-          <Col>
+          <Col className={`${TextStyle.txtverticalmiddle}`}>
+            <div>
             <h1 className={`${ColorStyle.colorWhite1}`}>
               CoronAsylum: From Everywhere To Everyone
             </h1>
@@ -46,7 +48,7 @@ export default function Home() {
               nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-
+            
             <br />
             <InputGroup className="mb-3">
               <FormControl
@@ -60,6 +62,7 @@ export default function Home() {
                 </Button>{" "}
               </InputGroup.Append>
             </InputGroup>
+            </div>
           </Col>
           <Col xs={1} />
         </Row>
@@ -98,7 +101,7 @@ export default function Home() {
                 country: "Italy",
 
                 type: "line",
-                label: "Chart of Coronavirus Confirmed Cases in ",
+                label: "Chart of Coronavirus Confirmed Cases in Italy",
                 backgroundColor: "rgba(0,123,252,0.5)",
                 borderColor: "rgba(0,123,252,1)",
                 pointRadius: 0,

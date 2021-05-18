@@ -22,31 +22,38 @@ export function stringtoDate(str) {
   return new Date(y, m, d);
 }
 
-export function datetoShortDate(date) {
-  var d = date.getDate();
-  var m = monthtoString(date.getMonth());
-  //console.log(date.getMonth());
+export function datetoShortDate(element) {
+  //var d = element.getDate();
+  var m = monthtoString(element.getMonth());
+  //console.log(element.getMonth());
   //console.log(m);
 
-  var y = date.getFullYear();
-  return d + " " + m + " " + y;
+  var y = element.getFullYear();
+  return m + " " + y;
 }
 
 export function monthtoString(d) {
   //console.log(d);
   var month = new Array();
-  month[0] = "Dicembre";
-  month[1] = "Gennaio";
-  month[2] = "Febbraio";
-  month[3] = "Marzo";
-  month[4] = "Aprile";
-  month[5] = "Maggio";
-  month[6] = "Giugno";
-  month[7] = "Luglio";
-  month[8] = "Agosto";
-  month[9] = "Settembre";
-  month[10] = "Ottobre";
-  month[11] = "Novembre";
+  month[0] = "December";
+  month[1] = "January";
+  month[2] = "February";
+  month[3] = "March";
+  month[4] = "April";
+  month[5] = "May";
+  month[6] = "June";
+  month[7] = "July";
+  month[8] = "August";
+  month[9] = "September";
+  month[10] = "October";
+  month[11] = "November";
   return month[d];
 }
 
+export function dateToMonth(date){
+  let arr=[];
+  date.forEach(e => {
+    arr.push(datetoShortDate(e));
+  });
+  return arr;
+}
