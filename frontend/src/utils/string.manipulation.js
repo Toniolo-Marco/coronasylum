@@ -16,12 +16,6 @@ export function inttoString(n) {
   return s.split("").reverse().join("");
 }
 
-export function apiDateToMonth(data) {
-  let arr = [];
-  if (data) {
-    data.forEach((e) => {
-      arr.push(moment(e.Date).format("MMM, yyyy"));
-    });
-  }
-  return arr;
+export function apiDateToMonth(e) {
+  return moment(e).format("MMM, yyyy");
 }

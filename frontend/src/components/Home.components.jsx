@@ -14,10 +14,33 @@ import {
   SearchIcon,
   Histogram,
   ImageStyle,
+  useState,
+  downloadData,
+  useEffect,
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const query = { slug: "italy", country: "Italy" };
+  useEffect(() => {
+    downloadData(query).then((res) => {
+      console.log(res.data);
+      let arr = [];
+      if (res.data) {
+        arr = res.data;
+      }
+      setData(arr);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (data.length !== 0) {
+      setIsLoading(false);
+    }
+  }, [data]);
+
   return (
     <React.Fragment>
       <Navbar />
@@ -99,15 +122,19 @@ export default function Home() {
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               quickly understand the trend
             </p>
+
             <Chart
+              data={data}
               params={{
-                category: "dayone",
+                category: "total",
                 status: "Confirmed",
-                country: "Italy",
-                slug: "italy",
+                country: query.country,
 
                 type: "line",
-                label: "Chart of Coronavirus Confirmed Cases in Italy",
+                label:
+                  "Chart of Coronavirus Confirmed" +
+                  " cases in " +
+                  query.country,
                 backgroundColor: "rgba(0,123,252,0.5)",
                 borderColor: "rgba(0,123,252,1)",
                 pointRadius: 0,

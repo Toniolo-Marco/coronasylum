@@ -2,7 +2,7 @@ import Chart from "chart.js";
 import {
   React,
   useEffect,
-  createRef,
+  useRef,
   downloadData,
   TextStyle,
   apiDateToMonth,
@@ -13,56 +13,58 @@ import {
  * @returns {any}
  */
 export default function GeneralChart({ data, params, ...rest }) {
-  const ref = createRef();
-
+  const ref = useRef(null);
+  console.log();
+  let canvas = ref.current;
   useEffect(() => {
-    var ctx = ref.current.getContext("2d");
+    canvas &&
+      new Chart(canvas.getContext("2d"), {
+        // The type of chart we want to create
+        type: params.type,
 
-    new Chart(ctx, {
-      // The type of chart we want to create
-      type: params.type,
-
-      // The data for our dataset
-      data: {
-        labels: "linea 28",
-        datasets: [
-          {
-            label: params.label,
-            backgroundColor: params.backgroundColor,
-            borderColor: params.borderColor,
-            pointRadius: params.pointRadius,
-            //qui dovreo chiamare data."status", il valore di status lo ho in query.status, come faccio senza if?
-            data: params.status,
-          },
-        ],
-      },
-      options: {
-        responsive: params.responsive,
-        tooltips: {
-          enabled: params.tooltips.enabled,
-          intersect: params.tooltips.intersect,
-          callbacks: {
-            title: function (tooltipItems) {
-              //Return value for title
-              return "titolo tooltip";
-            },
-            label: function (tooltipItems) {
-              //Return value for label
-              return "label tooltip";
-            },
-          },
-        },
-        scales: {
-          xAxes: [
+        // The data for our dataset
+        data: {
+          labels: data.map((e) => e.Date),
+          datasets: [
             {
-              ticks: {
-                callback: () => apiDateToMonth(data),
-              },
+              label: params.label,
+              backgroundColor: params.backgroundColor,
+              borderColor: params.borderColor,
+              pointRadius: params.pointRadius,
+              //qui dovreo chiamare data."status", il valore di status lo ho in query.status, come faccio senza if?
+              data: data.map((e) => e[params.status]),
             },
           ],
         },
-      },
-    });
-  }, []);
+        options: {
+          responsive: params.responsive,
+          tooltips: {
+            enabled: params.tooltips.enabled,
+            intersect: params.tooltips.intersect,
+            callbacks: {
+              title: function (tooltipItems) {
+                //Return value for title
+                return params.status + ":";
+              },
+              label: function (tooltipItems) {
+                //Return value for label
+                return tooltipItems.value;
+              },
+            },
+          },
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return apiDateToMonth(value);
+                  },
+                },
+              },
+            ],
+          },
+        },
+      });
+  }, [data, canvas]);
   return <canvas id="customizeChart" ref={ref}></canvas>;
 }
