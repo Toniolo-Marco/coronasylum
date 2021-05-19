@@ -44,7 +44,7 @@ export default function GeneralChart({ data, params, ...rest }) {
             callbacks: {
               title: function (tooltipItems) {
                 //Return value for title
-                return apiDateToString(tooltipItems.value);
+                return apiDateToString(tooltipItems[0].xLabel);
               },
               label: function (tooltipItems) {
                 //Return value for label
