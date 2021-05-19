@@ -2,6 +2,7 @@ const element = document.querySelector(".cool-element"),
   numberInput = document.querySelector(".number-input"),
   numberSubmit = document.querySelector(".number-button");
 const ROOT_CLASS_NAME = "digit-flipper";
+
 class DigitFlipper {
   constructor(element, options = { number: 9, iterationCount: 9 }) {
     if (options.number > 9 || options.number < 0) return;
