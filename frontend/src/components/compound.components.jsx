@@ -81,9 +81,78 @@ export default function Compound({ query, ...rest }) {
             <Col></Col>
           </Row>
           <Row>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
+            <Col xs={4}>
+              <Chart
+                data={data}
+                params={{
+                  category: "total",
+                  status: "Active",
+                  country: query.country,
+
+                  type: "line",
+                  label:
+                    "Chart of Coronavirus Active" +
+                    " cases in " +
+                    query.country,
+                  backgroundColor: "rgba(0,123,252,0.5)",
+                  borderColor: "rgba(0,123,252,1)",
+                  pointRadius: 0,
+                  responsive: true,
+                  tooltips: {
+                    enabled: true,
+                    intersect: false,
+                  },
+                }}
+              />
+            </Col>
+            <Col xs={4}>
+              <Chart
+                data={data}
+                params={{
+                  category: "total",
+                  status: "Recovered",
+                  country: query.country,
+
+                  type: "line",
+                  label:
+                    "Chart of Coronavirus Recovered" +
+                    " cases in " +
+                    query.country,
+                  backgroundColor: "rgba(0,123,252,0.5)",
+                  borderColor: "rgba(0,123,252,1)",
+                  pointRadius: 0,
+                  responsive: true,
+                  tooltips: {
+                    enabled: true,
+                    intersect: false,
+                  },
+                }}
+              />
+            </Col>
+            <Col xs={4}>
+              <Chart
+                data={data}
+                params={{
+                  category: "total",
+                  status: "Deaths",
+                  country: query.country,
+
+                  type: "line",
+                  label:
+                    "Chart of Coronavirus Deaths" +
+                    " cases in " +
+                    query.country,
+                  backgroundColor: "rgba(0,123,252,0.5)",
+                  borderColor: "rgba(0,123,252,1)",
+                  pointRadius: 0,
+                  responsive: true,
+                  tooltips: {
+                    enabled: true,
+                    intersect: false,
+                  },
+                }}
+              />
+            </Col>
           </Row>
           <Row>
             <Col></Col>

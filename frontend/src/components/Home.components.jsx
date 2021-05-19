@@ -22,7 +22,7 @@ import covidfristimage from "../img/imghome.png";
 import Counter from "./counter.components.jsx";
 import moment from "moment";
 export default function Home() {
-  let today = moment();
+  const wdate = "2021-05-17";
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const query = { slug: "italy", country: "Italy" };
@@ -158,7 +158,7 @@ export default function Home() {
             <Histogram
               data={data}
               params={{
-                whichDate: today,
+                whichDate: wdate,
                 country: "Italy",
 
                 type: "bar",

@@ -13,7 +13,9 @@ import {
 export default function GeneralHistogram({ data, params, ...rest }) {
   const ref = useRef(null);
   let canvas = ref.current;
-
+  //console.log(data.map((e) => apiDateToString(e.Date)));
+  console.log(apiDateToString(params.whichDate));
+  console.log(data.map((e) => apiDateToString(e.Date)));
   useEffect(() => {
     canvas &&
       new Chart(canvas.getContext("2d"), {
@@ -28,24 +30,27 @@ export default function GeneralHistogram({ data, params, ...rest }) {
               label: params.title,
               data: [
                 data
+
                   .filter(
                     (e) =>
-                      apiDateToString(e.Date) ===
-                      apiDateToString(params.whichData)
+                      apiDateToString(e.Date) ==
+                      apiDateToString(params.whichDate)
                   )
                   .map((e) => e.Active),
                 data
+
                   .filter(
                     (e) =>
-                      apiDateToString(e.Date) ===
-                      apiDateToString(params.whichData)
+                      apiDateToString(e.Date) ==
+                      apiDateToString(params.whichDate)
                   )
                   .map((e) => e.Recovered),
                 data
+
                   .filter(
                     (e) =>
-                      apiDateToString(e.Date) ===
-                      apiDateToString(params.whichData)
+                      apiDateToString(e.Date) ==
+                      apiDateToString(params.whichDate)
                   )
                   .map((e) => e.Deaths),
               ],
