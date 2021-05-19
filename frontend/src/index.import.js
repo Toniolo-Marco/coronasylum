@@ -5,7 +5,7 @@ export { useEffect } from "react";
 export { useState as useState } from "react";
 export { useRef as useRef } from "react";
 export { createRef as createRef } from "react";
-
+export { moment as moment } from "moment";
 //BOOTSTRAP
 export {
   Row,

@@ -3,8 +3,6 @@ import {
   React,
   useEffect,
   useRef,
-  downloadData,
-  TextStyle,
   apiDateToMonth,
   apiDateToString,
 } from "../index.import";
@@ -16,8 +14,8 @@ import {
  */
 export default function GeneralChart({ data, params, ...rest }) {
   const ref = useRef(null);
-  console.log();
   let canvas = ref.current;
+
   useEffect(() => {
     canvas &&
       new Chart(canvas.getContext("2d"), {

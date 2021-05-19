@@ -3,62 +3,64 @@ import {
   React,
   useEffect,
   createRef,
-  downloadData,
-  TextStyle,
   apiDateToMonth,
+  apiDateToString,
+  useRef,
 } from "../index.import";
 
 //https://api.covid19api.com/live/country/south-africa
 
-export default function GeneralHistogram({ params, ...rest }) {
-  const ref = createRef();
+export default function GeneralHistogram({ data, params, ...rest }) {
+  const ref = useRef(null);
+  let canvas = ref.current;
 
-  // useEffect(() => {
-  //     var ctx = ref.current.getContext("2d");
+  data.Active = data
+    .filter(
+      (e) => apiDateToString(e.Date) === apiDateToString(params.whichData)
+    )
+    .map((e) => e.Active);
 
-  //     downloadData(params).then((res) => {
-  //         const data = res;
-  //         new Chart(ctx, {
-  //             // The type of chart we want to create
-  //             type: params.type,
+  data.Recovered = data
+    .filter(
+      (e) => apiDateToString(e.Date) === apiDateToString(params.whichData)
+    )
+    .map((e) => e.Recovered);
 
-  //             // The data for our dataset
-  //             data: {
-  //               labels: params.label,
-  //               datasets: [
-  //                 {
-  //                   label: params.title,
-  //                   data: data.bars,
-  //                   backgroundColor: params.backgroundColor,
-  //                   borderColor: params.borderColor,
-  //                   borderWidth: 1,
-  //                 },
-  //               ],
-  //             },
-  //             options: {
-  //               responsive: params.responsive,
-  //               tooltips: {
-  //                 enabled: params.tooltips.enabled,
-  //                 intersect: params.tooltips.intersect,
-  //                 callbacks: {
-  //                   title: function (tooltipItems) {
-  //                     //Return value for title
-  //                     return datetoShortDate(tooltipItems[0].xLabel);
-  //                   },
-  //                   label: function (tooltipItems) {
-  //                     //Return value for label
-  //                     return params.status + ": " + tooltipItems.yLabel;
-  //                   },
-  //                 },
-  //               },
-  //               scales: {
-  //                 y: {
-  //                     beginAtZero: true
-  //                 }
-  //               },
-  //             },
-  //           });
-  //         });
-  //       }, []);
+  data.Deaths = data
+    .filter(
+      (e) => apiDateToString(e.Date) === apiDateToString(params.whichData)
+    )
+    .map((e) => e.Deaths);
+
+  useEffect(() => {
+    canvas &&
+      new Chart(canvas.getContext("2d"), {
+        // The type of chart we want to create
+        type: params.type,
+
+        // The data for our dataset
+        data: {
+          labels: params.label,
+          datasets: [
+            {
+              label: params.title,
+              data: [data.Active, data.Recovered, data.Deaths],
+              backgroundColor: params.backgroundColor,
+              borderColor: params.borderColor,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: params.responsive,
+
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+  }, [data, canvas]);
   return <canvas id="customizeChart" ref={ref}></canvas>;
 }

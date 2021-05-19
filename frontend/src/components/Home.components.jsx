@@ -20,8 +20,9 @@ import {
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
 import Counter from "./counter.components.jsx";
-
+import moment from "moment";
 export default function Home() {
+  let today = moment();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const query = { slug: "italy", country: "Italy" };
@@ -154,10 +155,11 @@ export default function Home() {
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               compare total cases, recovered and deaths
             </p>
-            {/* <Histogram
+            <Histogram
               params={{
-                category: "dayone",
+                whichDate: today,
                 country: "Italy",
+
                 type: "bar",
                 title: "Covid in Italy Today",
                 label: ["Active", "Recovered", "Deaths"],
@@ -178,7 +180,7 @@ export default function Home() {
                   intersect: false,
                 },
               }}
-            /> */}
+            />
           </Col>
         </Row>
         <br />
