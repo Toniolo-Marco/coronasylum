@@ -156,6 +156,7 @@ export default function Home() {
               compare total cases, recovered and deaths
             </p>
             <Histogram
+              data={data}
               params={{
                 whichDate: today,
                 country: "Italy",
