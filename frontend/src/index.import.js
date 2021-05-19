@@ -54,6 +54,7 @@ export { default as Form } from "./prefabs/Form.prefabs";
 export { default as downloadData } from "./utils/statistics.utils";
 
 export { inttoString as inttoString } from "./utils/string.manipulation";
+export { apiDateToString as apiDateToString } from "./utils/string.manipulation";
 
 export { apiDateToMonth as apiDateToMonth } from "./utils/string.manipulation";
 

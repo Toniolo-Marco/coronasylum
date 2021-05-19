@@ -17,5 +17,8 @@ export function inttoString(n) {
 }
 
 export function apiDateToMonth(e) {
-  return moment(e).format("MMM, yyyy");
+  return moment(e).format("MMM yyyy");
+}
+export function apiDateToString(e) {
+  return moment(e).format("D MMM yyyy");
 }

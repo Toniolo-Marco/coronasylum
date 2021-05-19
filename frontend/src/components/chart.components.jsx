@@ -6,7 +6,9 @@ import {
   downloadData,
   TextStyle,
   apiDateToMonth,
+  apiDateToString,
 } from "../index.import";
+
 /**
  * returns a component from given paramiters `param0`
  * @param {*} listofparams
@@ -44,7 +46,7 @@ export default function GeneralChart({ data, params, ...rest }) {
             callbacks: {
               title: function (tooltipItems) {
                 //Return value for title
-                return params.status + ":";
+                return apiDateToString(tooltipItems.value);
               },
               label: function (tooltipItems) {
                 //Return value for label
