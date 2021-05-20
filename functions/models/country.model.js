@@ -2,17 +2,27 @@ const mongoose = require("mongoose");
 
 exports.default = mongoose.model(
     "Country",
-    mongoose.Schema({
-        Country: {
-            type: String,
+    mongoose.Schema(
+        {
+            Country: {
+                type: String,
+            },
+            Slug: {
+                type: String,
+                unique: true,
+                required: true,
+            },
+            ISO2: {
+                type: String,
+            },
         },
-        Slug: {
-            type: String,
-            unique: true,
-            required: true,
-        },
-        ISO2: {
-            type: String,
-        },
-    },{timestamps: true})
+        {
+            timestamps: true,
+            toObject: {
+                transform: function (_, ret) {
+                    delete ret._id;
+                },
+            },
+        }
+    )
 );

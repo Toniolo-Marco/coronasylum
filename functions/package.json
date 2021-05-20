@@ -17,14 +17,19 @@
   "dependencies": {
     "axios": "^0.21.1",
     "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-datetime": "^1.8.0",
     "docsify": "^4.12.1",
     "docsify-pdf-converter": "^2.0.7",
     "firebase-admin": "^9.8.0",
     "firebase-functions": "^3.11.0",
+    "http-status-codes": "^2.1.4",
     "mocha": "^8.4.0",
     "moment": "^2.29.1",
     "mongoose": "^5.12.9",
+    "queue": "^6.0.2",
     "sinon": "^10.0.0",
+    "sinon-chai": "^3.6.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
