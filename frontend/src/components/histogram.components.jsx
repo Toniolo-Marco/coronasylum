@@ -52,6 +52,9 @@ export default function GeneralHistogram({ data, params, ...rest }) {
           ],
         },
         options: {
+          legend: {
+            display: false,
+          },
           responsive: params.responsive,
           plugins: {
             legend: {

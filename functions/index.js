@@ -4,8 +4,6 @@ const functions = require("firebase-functions");
 
 const uri = (dbname) =>
   `mongodb+srv://User:1234@clustercorona.32baq.mongodb.net/${dbname}?retryWrites=true&w=majority`;
-// data fetch background task
-require("./conf/update.service.conf");
 
 // DB connection
 require("./conf/db.conf").default(uri("coviddata"));
@@ -17,7 +15,10 @@ const corsOptions = {
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { checkUpdates, updateCountry } = require("./controllers/update.controller");
+const {
+  checkUpdates,
+  updateCountry,
+} = require("./controllers/update.controller");
 app.use(cors(corsOptions));
 app.use(express.json());
 app.get("/api/total/country/:country", getDataByCountry);
