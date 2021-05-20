@@ -7,5 +7,6 @@ exports.default = (url) => mongoose.connect(url, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         poolSize: 10,
+        useFindAndModify: false
 })
 
