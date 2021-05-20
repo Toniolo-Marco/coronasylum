@@ -23,9 +23,10 @@ export default function Today() {
           <Navbar />
         </Col>
       </Row>
+
       <Container fluid>
         {countries
-          .filter((e) => e.country.substring(0, 3).toLowerCase() === "bra")
+          .filter((e) => e.country.substring(0, 3).toLowerCase() === "ita")
           .map((e) => {
             return (
               <Compound key={e.slug} query={{ ...e, category: "total" }} />

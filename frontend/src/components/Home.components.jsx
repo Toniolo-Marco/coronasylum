@@ -162,7 +162,7 @@ export default function Home() {
                 country: "Italy",
 
                 type: "bar",
-                title: "Covid in Italy Today",
+                title: "Today",
                 label: ["Active", "Recovered", "Deaths"],
                 backgroundColor: [
                   "rgba(43, 181, 57,0.5)",

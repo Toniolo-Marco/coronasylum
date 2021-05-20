@@ -87,7 +87,7 @@ export default function Compound({ query, ...rest }) {
                   country: query.country,
 
                   type: "bar",
-                  title: "Covid in " + query.country + " Today",
+                  title: "Today",
                   label: ["Active", "Recovered", "Deaths"],
                   backgroundColor: [
                     "rgba(43, 181, 57,0.5)",

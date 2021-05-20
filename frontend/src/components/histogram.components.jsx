@@ -6,6 +6,7 @@ import {
   apiDateToMonth,
   apiDateToString,
   useRef,
+  moment,
 } from "../index.import";
 
 //https://api.covid19api.com/live/country/south-africa
@@ -36,11 +37,13 @@ export default function GeneralHistogram({ data, params, ...rest }) {
             {
               label: params.title,
               data: data
-                .filter(
-                  (e) =>
-                    apiDateToString(e.Date) == apiDateToString(params.whichDate)
-                )
-                .map((e) => [e.Active, e.Recovered, e.Deaths])[0],
+                .filter((_, i, arr) => i >= arr.length - 2)
+                .map((e, i, arr) => {
+                  const deaths = arr[1].Deaths - arr[0].Deaths;
+                  const confirmed = arr[1].Confirmed - arr[0].Confirmed;
+                  const recovered = arr[1].Recovered - arr[0].Recovered;
+                  return [confirmed, recovered, deaths];
+                })[0],
 
               backgroundColor: params.backgroundColor,
               borderColor: params.borderColor,
@@ -50,7 +53,11 @@ export default function GeneralHistogram({ data, params, ...rest }) {
         },
         options: {
           responsive: params.responsive,
-
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
           scales: {
             y: {
               beginAtZero: true,
