@@ -165,12 +165,12 @@ export default function Home() {
                 title: "Covid in Italy Today",
                 label: ["Active", "Recovered", "Deaths"],
                 backgroundColor: [
-                  "rgba(0,123,252,0.5)",
+                  "rgba(43, 181, 57,0.5)",
                   "rgba(255, 255, 255,0.5)",
                   "rgba(255, 51, 51,0.5)",
                 ],
                 borderColor: [
-                  "rgba(0,123,252,1)",
+                  "rgba(43, 181, 57,1)",
                   "rgba(255, 255, 255,1)",
                   "rgba(255, 51, 51,1)",
                 ],

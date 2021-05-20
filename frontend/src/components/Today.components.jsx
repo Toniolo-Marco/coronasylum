@@ -18,9 +18,14 @@ import countries from "../utils/countries";
 export default function Today() {
   return (
     <React.Fragment>
+      <Row>
+        <Col>
+          <Navbar />
+        </Col>
+      </Row>
       <Container fluid>
         {countries
-          .filter((e) => e.country.substring(0, 3).toLowerCase() === "bos")
+          .filter((e) => e.country.substring(0, 3).toLowerCase() === "bra")
           .map((e) => {
             return (
               <Compound key={e.slug} query={{ ...e, category: "total" }} />
