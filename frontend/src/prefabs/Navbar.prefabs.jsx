@@ -8,6 +8,8 @@ import {
   Dropdown,
 } from "../index.import";
 import NB from "react-bootstrap/Navbar";
+import Login from "./GoogleLogin.prefabs";
+import Logout from "./GoogleLogout.prefabs";
 
 export default function Navbar() {
   return (
@@ -49,15 +51,10 @@ export default function Navbar() {
 
           <Nav>
             <Nav.Item>
-              <Nav.Link href="#login">Sign In</Nav.Link>
+              <Login />
             </Nav.Item>
             <Nav.Item>
-              <Button
-                variant="outline-light"
-                title="Create your account to access more data"
-              >
-                Sign Up
-              </Button>
+              <Logout />
             </Nav.Item>
           </Nav>
         </NB>

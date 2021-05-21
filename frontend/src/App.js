@@ -13,6 +13,8 @@ import {
   ColorStyle,
   TextStyle,
   Today,
+  Redirect,
+  DivStyle,
 } from "./index.import";
 
 //const JsonFile = CreateJsonChart(500, 250, "description");
@@ -22,7 +24,7 @@ function App() {
   useEffect(() => setTimeout(() => setNumber(number + 1), 1000), [number]);
 
   return (
-    <div className={ColorStyle.bgGrey1}>
+    <div className={`${ColorStyle.bgGrey1} ${DivStyle.divOverflowHidden} `}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -32,7 +34,7 @@ function App() {
           <Route exact path="/Covid19" component={Covid19} />
           <Route exact path="/About/Developer" component={Developer} />
           <Route exact path="/About/Database" component={Database} />
-          <Route exact path="/Today" component={Today} />
+          <PrivateRoute exact path="/Today" component={Today} />
           {/*
         <Route path="/login" component={Login} />
         <Route path="/singin" component={SingIn} />
@@ -41,16 +43,29 @@ function App() {
       </Router>
     </div>
   );
-  /*
-  return (
-    <div>
-      <CallBackend />
-      <Counter init={number} />
-      <MyChart></MyChart>
-      <GeneralChart nome="giovanni" />
-    </div>
-  );
-  */
 }
+
+function PrivateRoute({ children, ...rest }) {
+  let auth = useAuth();
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        auth.user ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
+}
+
+function useAuth() {}
 
 export default App;

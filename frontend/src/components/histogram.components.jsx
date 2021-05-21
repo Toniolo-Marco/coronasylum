@@ -15,15 +15,15 @@ export default function GeneralHistogram({ data, params, ...rest }) {
   const ref = useRef(null);
   let canvas = ref.current;
   //console.log(data.map((e) => apiDateToString(e.Date)));
-  console.log(apiDateToString(params.whichDate));
-  console.log(data.map((e) => apiDateToString(e.Date)));
-  console.log(
-    data
-      .filter(
-        (e) => apiDateToString(e.Date) == apiDateToString(params.whichDate)
-      )
-      .map((e) => [e.Active, e.Recovered, e.Deaths])
-  );
+  // console.log(apiDateToString(params.whichDate));
+  // console.log(data.map((e) => apiDateToString(e.Date)));
+  // console.log(
+  //   data
+  //     .filter(
+  //       (e) => apiDateToString(e.Date) == apiDateToString(params.whichDate)
+  //     )
+  //     .map((e) => [e.Active, e.Recovered, e.Deaths])
+  // );
   useEffect(() => {
     canvas &&
       new Chart(canvas.getContext("2d"), {

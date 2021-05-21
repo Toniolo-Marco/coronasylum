@@ -4,75 +4,76 @@ import {
   Navbar,
   ColorStyle,
   TextStyle,
+  Row,
+  Col,
+  Card,
+  Button,
 } from "../index.import.js";
 
 export default function API() {
   return (
     <div>
       <Navbar />
-      <h1 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite}`}>
-        CoronAsylum
-      </h1>
-      <h6 className={TextStyle.txtcenter}>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
-        tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-        nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit
-        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui
-        officia deserunt mollit anim id est laborum.
-      </h6>
-
-      <Chart
-        params={{
-          status: "Confirmed",
-          country: "brazil",
-          type: "line",
-          label: "Chart of Coronavirus Confirmed Cases in ",
-          backgroundColor: "rgba(0, 195, 0, 0.5)",
-          borderColor: "rgba(0, 195, 0,1)",
-          pointRadius: 0,
-          responsive: true,
-          tooltips: {
-            enabled: true,
-            intersect: false,
-          },
-        }}
-      />
-      <Chart
-        params={{
-          status: "Confirmed",
-          country: "italy",
-          type: "line",
-          label: "Chart of Coronavirus Confirmed Cases in ",
-          backgroundColor: "rgba(255, 99, 132, 0.5)",
-          borderColor: "rgba(255, 99, 132,1)",
-          pointRadius: 0,
-          responsive: true,
-          tooltips: {
-            enabled: true,
-            intersect: false,
-          },
-        }}
-      />
-      {/*
-      <GeneralChart
-        params={{
-          casetype: "Death",
-          country: "usa",
-          type: "line",
-          label: "Chart of Coronavirus death in ",
-          backgroundColor: "rgba(255, 99, 132, 0.5)",
-          borderColor: "rgba(255, 99, 132,1)",
-          pointRadius: 0,
-          responsive: true,
-          tooltips: {
-            enabled: true,
-            intersect: false,
-          },
-        }}
-      />
-      */}
+      <Row>
+        <Col>
+          <h1 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
+            Which APIs does CoronAsylum use?
+          </h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h6 className={` ${TextStyle.txtcenter} ${ColorStyle.colorGrey5}`}>
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
+            tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrum exercitationem ullam corporis suscipit
+            laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute
+            iure reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt
+            in culpa qui officia deserunt mollit anim id est laborum.
+          </h6>
+        </Col>
+        <Col></Col>
+      </Row>
+      <Row>
+        <Col>
+          <h1 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
+            The final Solution: Mongodb.com
+          </h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h6 className={` ${TextStyle.txtcenter} ${ColorStyle.colorGrey5}`}>
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
+            tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrum exercitationem ullam corporis suscipit
+            laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute
+            iure reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt
+            in culpa qui officia deserunt mollit anim id est laborum.
+          </h6>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={2} />
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Learn More</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col></Col>
+        <Col></Col>
+        <Col xs={2} />
+      </Row>
     </div>
   );
 }

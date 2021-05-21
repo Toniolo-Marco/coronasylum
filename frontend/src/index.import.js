@@ -5,6 +5,7 @@ export { useEffect } from "react";
 export { useState as useState } from "react";
 export { useRef as useRef } from "react";
 export { createRef as createRef } from "react";
+export { Redirect } from "react-router-dom";
 export { moment as moment } from "moment";
 //BOOTSTRAP
 export {
@@ -19,6 +20,7 @@ export {
   FormControl,
   InputGroup,
   Spinner,
+  Card,
 } from "react-bootstrap";
 export { default as Bootstrap } from "bootstrap/dist/css/bootstrap.min.css";
 
@@ -29,6 +31,7 @@ export { default as GlobalStyle } from "./scss/global.module.scss";
 export { default as NavbarStyle } from "./scss/navbar.module.scss";
 export { default as LoadingStyle } from "./scss/loading.module.scss";
 export { default as ImageStyle } from "./scss/img.module.scss";
+export { default as DivStyle } from "./scss/div.module.scss";
 //components
 export { default as Chart } from "./components/chart.components";
 export { default as Histogram } from "./components/histogram.components";

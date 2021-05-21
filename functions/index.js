@@ -1,3 +1,5 @@
+require("dotenv").config();
+const { auth } = require("./controllers/auth.controller");
 const { getDataByCountry } = require("./controllers/data.controller");
 // Firebase middleware
 const functions = require("firebase-functions");
@@ -24,6 +26,8 @@ app.use(express.json());
 app.get("/api/total/country/:country", getDataByCountry);
 app.get("/api/update/:country", updateCountry);
 app.post("/api/update", checkUpdates);
+app.post("/api/auth", auth);
 
 const { default: buildQuery, getData } = require("./services/api.service");
+
 exports.app = functions.https.onRequest(app);
