@@ -51,7 +51,7 @@ export default function Compound({ query, ...rest }) {
       {isLoading ? (
         <Loading />
       ) : (
-        <React.Fragment>
+        <div>
           <Row>
             <Col>
               <h3 className={`${ColorStyle.colorWhite1}`}></h3>
@@ -178,7 +178,7 @@ export default function Compound({ query, ...rest }) {
             <Col></Col>
             <Col></Col>
           </Row>
-        </React.Fragment>
+        </div>
       )}
     </React.Fragment>
   );
