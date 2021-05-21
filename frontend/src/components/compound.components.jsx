@@ -53,7 +53,7 @@ export default function Compound({ query, ...rest }) {
       ) : (
         <div>
           <Row>
-            <Col>
+            <Col xs={6}>
               <h3 className={`${ColorStyle.colorWhite1}`}></h3>
 
               <Chart
@@ -79,7 +79,7 @@ export default function Compound({ query, ...rest }) {
                 }}
               />
             </Col>
-            <Col>
+            <Col xs={6}>
               <Histogram
                 data={data}
                 params={{
