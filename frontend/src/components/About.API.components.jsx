@@ -8,20 +8,21 @@ import {
   Col,
   Card,
   Button,
+  DivStyle,
 } from "../index.import.js";
 
 export default function API() {
   return (
     <div>
       <Navbar />
-      <Row>
+      <Row className={`${DivStyle.marginBottom2}`}>
         <Col>
           <h1 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
             Which APIs does CoronAsylum use?
           </h1>
         </Col>
       </Row>
-      <Row>
+      <Row className={`${DivStyle.marginBottom5}`}>
         <Col>
           <h6 className={` ${TextStyle.txtcenter} ${ColorStyle.colorGrey5}`}>
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
@@ -35,14 +36,15 @@ export default function API() {
         </Col>
         <Col></Col>
       </Row>
-      <Row>
+      <Row className={`${DivStyle.marginBottom2}`}>
         <Col>
           <h1 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
             The final Solution: Mongodb.com
           </h1>
         </Col>
       </Row>
-      <Row>
+      <Row className={`${DivStyle.marginBottom5}`}>
+        <Col></Col>
         <Col>
           <h6 className={` ${TextStyle.txtcenter} ${ColorStyle.colorGrey5}`}>
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
@@ -58,20 +60,62 @@ export default function API() {
       <Row>
         <Col xs={2} />
         <Col>
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "18rem" }} className={`${ColorStyle.bgGrey4}`}>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>What's an API?</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Button variant="primary">Learn More</Button>
+              <Button
+                variant="primary"
+                target="_blank "
+                href="https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces"
+              >
+                Learn More
+              </Button>
             </Card.Body>
           </Card>
         </Col>
-        <Col></Col>
-        <Col></Col>
+        <Col>
+          <Card style={{ width: "18rem" }} className={`${ColorStyle.bgGrey4}`}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>What's an API?</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              <Button
+                variant="primary"
+                target="_blank "
+                href="https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces"
+              >
+                Learn More
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: "18rem" }} className={`${ColorStyle.bgGrey4}`}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>More about databases</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              <Button
+                variant="primary"
+                target="_blank "
+                href="https://www.oracle.com/database/what-is-database/"
+              >
+                Learn More
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
         <Col xs={2} />
       </Row>
     </div>
