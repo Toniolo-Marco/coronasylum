@@ -21,7 +21,6 @@ import {
 } from "../index.import.js";
 
 export default function Compound({ query, ...rest }) {
-  const wdate = "2021-05-17";
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -83,7 +82,6 @@ export default function Compound({ query, ...rest }) {
               <Histogram
                 data={data}
                 params={{
-                  whichDate: wdate,
                   country: query.country,
 
                   type: "bar",

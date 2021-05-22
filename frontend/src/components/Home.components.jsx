@@ -17,9 +17,10 @@ import {
   useState,
   downloadData,
   useEffect,
+  Counter,
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
-import Counter from "./counter.components.jsx";
+
 import moment from "moment";
 export default function Home() {
   const wdate = "2021-05-17";
@@ -202,7 +203,15 @@ export default function Home() {
             </p>
           </Col>
           <Col xs={7}>
-            <Counter />
+            <Counter
+              data={data}
+              params={{
+                category: "total",
+                status: "Confirmed",
+                country: query.country,
+                duration: 5,
+              }}
+            />
           </Col>
           <Col xs={1} />
         </Row>
