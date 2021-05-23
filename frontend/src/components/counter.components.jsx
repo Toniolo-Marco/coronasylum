@@ -22,7 +22,7 @@ import { useCountUp } from "react-countup";
 
 export default function Counter({ data, params, ...rest }) {
   const obj = setUpDates(data, params);
-  const { CountUp, start, pauseResume, reset, update } = useCountUp({
+  const { Counter, start, pauseResume, reset, update } = useCountUp({
     duration: params.duration,
     end: obj.end,
     start: 0,
@@ -32,7 +32,7 @@ export default function Counter({ data, params, ...rest }) {
 
   return (
     <React.Fragment>
-      <div>{CountUp}</div>
+      <div>{Counter}</div>
     </React.Fragment>
   );
 }
@@ -40,9 +40,22 @@ export default function Counter({ data, params, ...rest }) {
 function setUpDates(data, params) {
   //params.status
   var arr = data
-    .filter((_, i, arr) => i >= arr.length - 5)
+    .filter((_, i, arr) => i >= arr.length - 7)
     .map((e) => e[params.status]);
 
+  const eachday = [];
+  for (let i = arr.length - 1; i > 0; i--) {
+    eachday[i - 1] = arr[i] - arr[i - 1];
+  }
+  //24h 60min 60sec
+  //86400
+  const eachsec = [];
+  for (let i = 0; i < eachday.length; i++) {
+    eachsec[i] = eachday[i] / 86400;
+  }
+  console.log(arr);
+  console.log(eachday);
+  console.log(eachsec);
   var obj = {
     end: 200,
     secondPerUpdate: 2,
