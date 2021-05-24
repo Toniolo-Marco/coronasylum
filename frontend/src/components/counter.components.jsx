@@ -19,20 +19,45 @@ import {
   useEffect,
 } from "../index.import.js";
 import { useCountUp } from "react-countup";
+import moment from "moment";
+
+const setEnd = (data, status, casesPerSecond) => {
+  if (data && data.length && data.length > 0) {
+    const lastday = data[data.length - 1];
+    const time = moment(lastday.Date);
+    const now = moment();
+    let delta = Math.abs(now.diff(time, "seconds"));
+    //console.log(delta, casesPerSecond);
+    delta = Math.floor(delta * casesPerSecond);
+    return lastday[status] + delta;
+  } else {
+    return 0;
+  }
+};
 
 export default function Counter({ data, params, ...rest }) {
-  const obj = setUpDates(data, params);
-  const { Counter, start, pauseResume, reset, update } = useCountUp({
-    duration: params.duration,
-    end: obj.end,
-    start: 0,
-    delay: 1,
-    redraw: true,
-  });
+  const casesPerSecond = setUpDates(data, params);
+  const [value, setValue] = useState(0);
+  const end = setEnd(data, params.status, casesPerSecond);
 
+  useEffect(() => {
+    if (value < end - 1111) {
+      setTimeout(() => {
+        setValue(value + 1111);
+      }, 1);
+    } else if (value > end - 1111 && value < end) {
+      setTimeout(() => {
+        setValue(value + 1);
+      }, 1);
+    } else {
+      setTimeout(() => {
+        setValue(value + 1);
+      }, 1000 / casesPerSecond);
+    }
+  }, [value, setValue]);
   return (
     <React.Fragment>
-      <div>{Counter}</div>
+      <div style={{ color: "white" }}>{value}</div>
     </React.Fragment>
   );
 }
@@ -53,12 +78,14 @@ function setUpDates(data, params) {
   for (let i = 0; i < eachday.length; i++) {
     eachsec[i] = eachday[i] / 86400;
   }
-  console.log(arr);
-  console.log(eachday);
-  console.log(eachsec);
-  var obj = {
-    end: 200,
-    secondPerUpdate: 2,
-  };
-  return obj;
+  // console.log(arr);
+  // console.log(eachday);
+  // console.log(eachsec);
+
+  const avg =
+    eachsec.reduce((acc, val) => {
+      return acc + val;
+    }, 0) / eachsec.length;
+
+  return avg;
 }

@@ -1,11 +1,18 @@
-import { React } from "../index.import";
+import { React, Authentication } from "../index.import";
 import { GoogleLogin } from "react-google-login";
 
 const clientId = process.env.REACT_APP_ID_CLIENT;
 
 export default function Login() {
+  const value = React.useContext(Authentication);
+
   const onSuccess = (res) => {
-    console.log("[Login Success] currentUser:", res);
+    console.log(res);
+    const user = {
+      tokenId: res.tokenId,
+      profile: res.profileObj,
+    };
+    value.setUser(user);
     sessionStorage.setItem(
       "user",
       JSON.stringify({

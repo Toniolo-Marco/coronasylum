@@ -13,6 +13,7 @@ import {
   InputGroup,
   SearchIcon,
   Compound,
+  Filter,
 } from "../index.import.js";
 import countries from "../utils/countries";
 export default function Today() {
@@ -21,6 +22,11 @@ export default function Today() {
       <Row>
         <Col>
           <Navbar />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Filter />
         </Col>
       </Row>
 

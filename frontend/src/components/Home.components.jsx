@@ -203,15 +203,17 @@ export default function Home() {
             </p>
           </Col>
           <Col xs={7}>
-            <Counter
-              data={data}
-              params={{
-                category: "total",
-                status: "Confirmed",
-                country: query.country,
-                duration: 5,
-              }}
-            />
+            {data && (
+              <Counter
+                data={data}
+                params={{
+                  category: "total",
+                  status: "Confirmed",
+                  country: query.country,
+                  duration: 5,
+                }}
+              />
+            )}
           </Col>
           <Col xs={1} />
         </Row>

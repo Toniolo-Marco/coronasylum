@@ -21,6 +21,7 @@ export {
   InputGroup,
   Spinner,
   Card,
+  FormCheck,
 } from "react-bootstrap";
 export { default as Bootstrap } from "bootstrap/dist/css/bootstrap.min.css";
 
@@ -52,9 +53,11 @@ export { default as Today } from "./components/Today.components";
 //prefabs
 export { default as Navbar } from "./prefabs/Navbar.prefabs";
 export { default as Form } from "./prefabs/Form.prefabs";
+export { default as Filter } from "./prefabs/Filter.prefabs";
+export { Authentication } from "./Authentication.js";
 
 //utils
-export { default as downloadData } from "./utils/statistics.utils";
+export { downloadData as downloadData } from "./utils/statistics.utils";
 
 export { inttoString as inttoString } from "./utils/string.manipulation";
 export { apiDateToString as apiDateToString } from "./utils/string.manipulation";

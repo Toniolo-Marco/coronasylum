@@ -15,32 +15,34 @@ import {
   Today,
   Redirect,
   DivStyle,
+  Authentication,
 } from "./index.import";
 
 //const JsonFile = CreateJsonChart(500, 250, "description");
 
 function App() {
-  const [number, setNumber] = useState(157_000);
-  useEffect(() => setTimeout(() => setNumber(number + 1), 1000), [number]);
+  const [user, setUser] = useState({});
 
   return (
     <div className={`${ColorStyle.bgGrey1} ${DivStyle.divOverflowHidden} `}>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/About" component={About} />
-          <Route exact path="/About/API" component={API} />
-          <Route exact path="/Contacts" component={Contacts} />
-          <Route exact path="/Covid19" component={Covid19} />
-          <Route exact path="/About/Developer" component={Developer} />
-          <Route exact path="/About/Database" component={Database} />
-          <PrivateRoute exact path="/Today" component={Today} />
-          {/*
+      <Authentication.Provider value={{ user, setUser }}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/About" component={About} />
+            <Route exact path="/About/API" component={API} />
+            <Route exact path="/Contacts" component={Contacts} />
+            <Route exact path="/Covid19" component={Covid19} />
+            <Route exact path="/About/Developer" component={Developer} />
+            <Route exact path="/About/Database" component={Database} />
+            <PrivateRoute exact path="/Today" component={Today} />
+            {/*
         <Route path="/login" component={Login} />
         <Route path="/singin" component={SingIn} />
         */}
-        </Switch>
-      </Router>
+          </Switch>
+        </Router>
+      </Authentication.Provider>
     </div>
   );
 }
