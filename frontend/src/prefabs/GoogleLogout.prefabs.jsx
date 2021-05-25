@@ -8,7 +8,7 @@ export default function Logout() {
 
   const onSuccess = () => {
     value.setUser({});
-    alert("Logout made successflully");
+
     sessionStorage.removeItem("user");
   };
 
@@ -18,6 +18,7 @@ export default function Logout() {
         clientId={clientId}
         buttonText="Logout"
         onLogoutSuccess={onSuccess}
+        icon={false}
       />
     </div>
   );
