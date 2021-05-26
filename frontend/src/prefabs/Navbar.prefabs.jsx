@@ -63,6 +63,7 @@ export default function Navbar() {
                     <Nav.Item>
                       <img
                         style={{
+                          padding: "auto",
                           borderRadius: "50%",
                           height: "42px",
                           width: "42px",

@@ -55,9 +55,21 @@ export default function Counter({ data, params, ...rest }) {
       }, 1000 / casesPerSecond);
     }
   }, [value, setValue]);
+
+  let char = String.fromCharCode(value);
+  console.log(char);
+  console.log("ciao");
+  var digits = [];
+
+  for (var i = 0; i < char.length; i++) {
+    digits.push(<div id="counterDigit">{char.charAt(i)}</div>);
+  }
+
   return (
     <React.Fragment>
-      <div style={{ color: "white" }}>{value}</div>
+      <div id="counterContainer" style={{ color: "white" }}>
+        {digits}
+      </div>
     </React.Fragment>
   );
 }
