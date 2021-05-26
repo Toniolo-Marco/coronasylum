@@ -1,7 +1,6 @@
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import {
   React,
-  useEffect,
   useState,
   Home,
   About,
@@ -11,7 +10,6 @@ import {
   Developer,
   Database,
   ColorStyle,
-  TextStyle,
   Today,
   Redirect,
   DivStyle,

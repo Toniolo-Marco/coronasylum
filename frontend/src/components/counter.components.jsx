@@ -1,66 +1,53 @@
 import {
   React,
-  Chart,
-  Navbar,
-  ColorStyle,
-  TextStyle,
-  Row,
-  Col,
-  Jumbotron,
-  Button,
-  Container,
-  FormControl,
-  InputGroup,
-  SearchIcon,
-  Histogram,
-  ImageStyle,
   useState,
-  downloadData,
   useEffect,
   CounterContainer,
   DigitContainer,
 } from "../index.import.js";
-import { useCountUp } from "react-countup";
 import moment from "moment";
-var parse = require("html-react-parser");
 
 const setEnd = (data, status, casesPerSecond) => {
-  if (data && data.length && data.length > 0) {
-    const lastday = data[data.length - 1];
-    const time = moment(lastday.Date);
-    const now = moment();
-    let delta = Math.abs(now.diff(time, "seconds"));
-    //console.log(delta, casesPerSecond);
-    delta = Math.floor(delta * casesPerSecond);
-    return lastday[status] + delta;
-  } else {
-    return 0;
-  }
+  const lastday = data[data.length - 1];
+  const time = moment(lastday.Date);
+  const now = moment();
+  let delta = Math.abs(now.diff(time, "seconds"));
+  //console.log(delta, casesPerSecond);
+  delta = Math.floor(delta * casesPerSecond);
+  //console.log(delta);
+  //console.log(lastday[status], delta, lastday[status] + delta);
+  return lastday[status] + delta;
 };
 
 export default function Counter({ data, params, ...rest }) {
   const casesPerSecond = setUpDates(data, params);
   const [value, setValue] = useState(0);
   const end = setEnd(data, params.status, casesPerSecond);
+  //console.log(end);
+  const [startUp, setStartUp] = useState(true);
 
   useEffect(() => {
-    console.log(casesPerSecond);
-    if (value < end - 1111) {
+    if (startUp && value < end - 11111) {
+      setTimeout(() => {
+        setValue(value + 11111);
+      }, 1);
+    } else if (startUp && value > end - 11111 && value < end - 1111) {
       setTimeout(() => {
         setValue(value + 1111);
       }, 1);
-    } else if (value > end - 1111 && value < end - 111) {
+    } else if (startUp && value > end - 1111 && value < end - 111) {
       setTimeout(() => {
         setValue(value + 111);
       }, 1);
-    } else if (value > end - 111 && value < end) {
+    } else if (startUp && value > end - 111 && value < end) {
       setTimeout(() => {
         setValue(value + 1);
       }, 1);
     } else {
+      setStartUp(false);
       setTimeout(() => {
-        setValue(value + 1);
-      }, 1000 / casesPerSecond);
+        setValue(value + Math.sign(casesPerSecond));
+      }, 1000 / Math.abs(casesPerSecond));
     }
   }, [value, setValue]);
 
@@ -69,7 +56,11 @@ export default function Counter({ data, params, ...rest }) {
   let sNumber = value.toString().split("");
 
   digits = sNumber.map((val) => {
-    return <div id={DigitContainer.digitContainer}>{val}</div>;
+    return (
+      <div id={DigitContainer.digitContainer} key={Math.random().toString()}>
+        {val}
+      </div>
+    );
   });
 
   return (

@@ -1,15 +1,9 @@
 import {
   React,
   Navbar,
-  ColorStyle,
-  TextStyle,
   Row,
   Col,
-  Button,
   Container,
-  FormControl,
-  InputGroup,
-  SearchIcon,
   Compound,
   Filter,
 } from "../index.import.js";

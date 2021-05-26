@@ -1,6 +1,5 @@
 import {
   React,
-  Bootstrap,
   Navbar,
   Form,
   ColorStyle,

@@ -1,6 +1,5 @@
 import {
   React,
-  Chart,
   Navbar,
   ColorStyle,
   TextStyle,

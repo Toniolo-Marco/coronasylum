@@ -1,17 +1,13 @@
 import {
   React,
   Nav,
-  Button,
   NavDropdown,
   NavbarStyle,
-  useState,
-  Dropdown,
-  useEffect,
   Authentication,
+  Logout,
+  Login,
 } from "../index.import";
 import NB from "react-bootstrap/Navbar";
-import Login from "./GoogleLogin.prefabs";
-import Logout from "./GoogleLogout.prefabs";
 
 export default function Navbar() {
   return (
@@ -84,20 +80,5 @@ export default function Navbar() {
         </div>
       )}
     </Authentication.Consumer>
-  );
-}
-
-function HoverControlledDropdown(props) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
-
-  return (
-    <Dropdown
-      {...props}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onToggle={() => setIsClicked(!isClicked)}
-      show={isClicked || isHovered}
-    />
   );
 }

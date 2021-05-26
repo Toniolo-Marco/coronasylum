@@ -1,13 +1,5 @@
 import Chart from "chart.js";
-import {
-  React,
-  useEffect,
-  createRef,
-  apiDateToMonth,
-  apiDateToString,
-  useRef,
-  moment,
-} from "../index.import";
+import { React, useEffect, useRef } from "../index.import";
 
 //https://api.covid19api.com/live/country/south-africa
 

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { stringtoDate } from "../index.import";
 
 export const user = {};
 

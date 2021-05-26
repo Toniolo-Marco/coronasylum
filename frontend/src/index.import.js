@@ -2,11 +2,13 @@
 export { default as React } from "react";
 
 export { useEffect } from "react";
-export { useState as useState } from "react";
-export { useRef as useRef } from "react";
-export { createRef as createRef } from "react";
+export { useState } from "react";
+export { useRef } from "react";
+export { createRef } from "react";
 export { Redirect } from "react-router-dom";
-export { moment as moment } from "moment";
+
+export { Authentication } from "./Authentication.js";
+
 //BOOTSTRAP
 export {
   Row,
@@ -57,15 +59,16 @@ export { default as Today } from "./components/Today.components";
 export { default as Navbar } from "./prefabs/Navbar.prefabs";
 export { default as Form } from "./prefabs/Form.prefabs";
 export { default as Filter } from "./prefabs/Filter.prefabs";
-export { Authentication } from "./Authentication.js";
+export { default as Login } from "./prefabs/GoogleLogin.prefabs";
+export { default as Logout } from "./prefabs/GoogleLogout.prefabs";
 
 //utils
-export { downloadData as downloadData } from "./utils/statistics.utils";
+export { downloadData } from "./utils/statistics.utils";
 
-export { inttoString as inttoString } from "./utils/string.manipulation";
-export { apiDateToString as apiDateToString } from "./utils/string.manipulation";
+export { inttoString } from "./utils/string.manipulation";
+export { apiDateToString } from "./utils/string.manipulation";
 
-export { apiDateToMonth as apiDateToMonth } from "./utils/string.manipulation";
+export { apiDateToMonth } from "./utils/string.manipulation";
 
 //ICONS
 export { GoSearch as SearchIcon } from "react-icons/go";

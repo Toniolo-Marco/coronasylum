@@ -21,7 +21,6 @@ import {
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
 
-import moment from "moment";
 export default function Home() {
   const wdate = "2021-05-17";
   const [data, setData] = useState([]);
@@ -203,12 +202,12 @@ export default function Home() {
             </p>
           </Col>
           <Col xs={7}>
-            {data && (
+            {data && data.length > 7 && (
               <Counter
                 data={data}
                 params={{
                   category: "total",
-                  status: "Confirmed",
+                  status: "Active",
                   country: query.country,
                   duration: 5,
                 }}

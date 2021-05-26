@@ -1,23 +1,14 @@
 import {
   React,
   Chart,
-  Navbar,
   ColorStyle,
-  TextStyle,
   Row,
   Col,
-  Jumbotron,
-  Button,
-  Container,
-  FormControl,
-  InputGroup,
-  SearchIcon,
   Histogram,
   useState,
   useEffect,
   downloadData,
   Loading,
-  Counter,
 } from "../index.import.js";
 
 export default function Compound({ query, ...rest }) {
