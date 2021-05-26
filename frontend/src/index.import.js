@@ -33,6 +33,9 @@ export { default as NavbarStyle } from "./scss/navbar.module.scss";
 export { default as LoadingStyle } from "./scss/loading.module.scss";
 export { default as ImageStyle } from "./scss/img.module.scss";
 export { default as DivStyle } from "./scss/div.module.scss";
+export { default as CounterContainer } from "./scss/counterContainer.module.scss";
+export { default as DigitContainer } from "./scss/digitContainer.module.scss";
+
 //components
 export { default as Chart } from "./components/chart.components";
 export { default as Histogram } from "./components/histogram.components";

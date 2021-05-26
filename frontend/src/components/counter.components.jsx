@@ -17,9 +17,12 @@ import {
   useState,
   downloadData,
   useEffect,
+  CounterContainer,
+  DigitContainer,
 } from "../index.import.js";
 import { useCountUp } from "react-countup";
 import moment from "moment";
+var parse = require("html-react-parser");
 
 const setEnd = (data, status, casesPerSecond) => {
   if (data && data.length && data.length > 0) {
@@ -41,11 +44,16 @@ export default function Counter({ data, params, ...rest }) {
   const end = setEnd(data, params.status, casesPerSecond);
 
   useEffect(() => {
+    console.log(casesPerSecond);
     if (value < end - 1111) {
       setTimeout(() => {
         setValue(value + 1111);
       }, 1);
-    } else if (value > end - 1111 && value < end) {
+    } else if (value > end - 1111 && value < end - 111) {
+      setTimeout(() => {
+        setValue(value + 111);
+      }, 1);
+    } else if (value > end - 111 && value < end) {
       setTimeout(() => {
         setValue(value + 1);
       }, 1);
@@ -56,18 +64,17 @@ export default function Counter({ data, params, ...rest }) {
     }
   }, [value, setValue]);
 
-  let char = String.fromCharCode(value);
-  console.log(char);
-  console.log("ciao");
-  var digits = [];
+  let digits = [];
 
-  for (var i = 0; i < char.length; i++) {
-    digits.push(<div id="counterDigit">{char.charAt(i)}</div>);
-  }
+  let sNumber = value.toString().split("");
+
+  digits = sNumber.map((val) => {
+    return <div id={DigitContainer.digitContainer}>{val}</div>;
+  });
 
   return (
     <React.Fragment>
-      <div id="counterContainer" style={{ color: "white" }}>
+      <div id={CounterContainer.counterContainer} style={{ color: "white" }}>
         {digits}
       </div>
     </React.Fragment>
@@ -84,6 +91,7 @@ function setUpDates(data, params) {
   for (let i = arr.length - 1; i > 0; i--) {
     eachday[i - 1] = arr[i] - arr[i - 1];
   }
+
   //24h 60min 60sec
   //86400
   const eachsec = [];

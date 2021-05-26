@@ -1,12 +1,10 @@
 import {
   React,
-  Chart,
   Navbar,
   ColorStyle,
   TextStyle,
   Row,
   Col,
-  Jumbotron,
   Button,
   Container,
   FormControl,
@@ -24,15 +22,10 @@ export default function Today() {
           <Navbar />
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <Filter />
-        </Col>
-      </Row>
 
       <Container fluid>
         {countries
-          .filter((e) => e.country.substring(0, 3).toLowerCase() === "fra")
+          .filter((e) => e.country.substring(0, 3).toLowerCase() === "ita")
           .map((e) => {
             return (
               <Compound key={e.slug} query={{ ...e, category: "total" }} />

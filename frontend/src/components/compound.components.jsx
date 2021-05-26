@@ -25,7 +25,7 @@ export default function Compound({ query, ...rest }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     downloadData(query).then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       let arr = [];
       if (res.data) {
         arr = res.data;

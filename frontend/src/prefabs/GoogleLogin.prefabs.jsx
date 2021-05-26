@@ -7,7 +7,7 @@ export default function Login() {
   const value = React.useContext(Authentication);
 
   const onSuccess = (res) => {
-    console.log(res);
+    //console.log(res);
     const user = {
       tokenId: res.tokenId,
       profile: res.profileObj,
