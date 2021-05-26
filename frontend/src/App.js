@@ -24,6 +24,7 @@ function App() {
   return (
     <div className={`${ColorStyle.bgGrey1} ${DivStyle.divOverflowHidden} `}>
       <Authentication.Provider value={{ user, setUser }}>
+        {console.log(user)}{" "}
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -33,7 +34,8 @@ function App() {
             <Route exact path="/Covid19" component={Covid19} />
             <Route exact path="/About/Developer" component={Developer} />
             <Route exact path="/About/Database" component={Database} />
-            <PrivateRoute exact path="/Today" component={Today} />
+            <Route path="/Today" component={Today} />
+
             {/*
         <Route path="/login" component={Login} />
         <Route path="/singin" component={SingIn} />
@@ -46,17 +48,20 @@ function App() {
 }
 
 function PrivateRoute({ children, ...rest }) {
-  let auth = useAuth();
+  const AuthContext = React.useContext(Authentication);
+
+  let auth = AuthContext;
+  console.log(auth.user);
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user ? (
+        auth.user.tokenId ? (
           children
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: "/",
               state: { from: location },
             }}
           />
@@ -65,7 +70,5 @@ function PrivateRoute({ children, ...rest }) {
     />
   );
 }
-
-function useAuth() {}
 
 export default App;

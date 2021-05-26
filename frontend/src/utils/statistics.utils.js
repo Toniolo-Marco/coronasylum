@@ -7,7 +7,7 @@ const instance = axios.create({
 });
 
 export function downloadData(query) {
-  return instance.get(`/total/country/${query.slug}`, { headers: getAuth() });
+  return instance.get(`/total/country/${query.slug}`);
 }
 
 const getAuth = () => {
