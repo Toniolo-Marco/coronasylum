@@ -8,8 +8,6 @@ export default function Logout() {
 
   const onSuccess = () => {
     value.setUser({});
-
-    sessionStorage.removeItem("user");
   };
 
   return (

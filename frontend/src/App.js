@@ -11,12 +11,9 @@ import {
   Database,
   ColorStyle,
   Today,
-  Redirect,
   DivStyle,
   Authentication,
 } from "./index.import";
-
-//const JsonFile = CreateJsonChart(500, 250, "description");
 
 function App() {
   const [user, setUser] = useState({});
@@ -24,7 +21,6 @@ function App() {
   return (
     <div className={`${ColorStyle.bgGrey1} ${DivStyle.divOverflowHidden} `}>
       <Authentication.Provider value={{ user, setUser }}>
-        {console.log(user)}{" "}
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -44,30 +40,6 @@ function App() {
         </Router>
       </Authentication.Provider>
     </div>
-  );
-}
-
-function PrivateRoute({ children, ...rest }) {
-  const AuthContext = React.useContext(Authentication);
-
-  let auth = AuthContext;
-  console.log(auth.user);
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        auth.user.tokenId ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/",
-              state: { from: location },
-            }}
-          />
-        )
-      }
-    />
   );
 }
 

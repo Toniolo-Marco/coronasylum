@@ -13,11 +13,11 @@ import {
  * @returns {any}
  */
 export default function GeneralChart({ data, params, ...rest }) {
-  const ref = useRef(null);
-  let canvas = ref.current;
+  const ref = React.useRef(null);
 
   useEffect(() => {
-    canvas &&
+    let canvas = ref.current;
+    canvas && canvas.getContext &&
       new Chart(canvas.getContext("2d"), {
         // The type of chart we want to create
         type: params.type,
@@ -65,6 +65,6 @@ export default function GeneralChart({ data, params, ...rest }) {
           },
         },
       });
-  }, [data, canvas]);
+  }, [data,ref.current]);
   return <canvas id="customizeChart" ref={ref}></canvas>;
 }

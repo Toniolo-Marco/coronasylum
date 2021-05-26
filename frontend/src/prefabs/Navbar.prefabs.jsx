@@ -65,6 +65,7 @@ export default function Navbar() {
                           width: "42px",
                           marginRight: "10px",
                         }}
+                        alt="a pic"
                         src={value.user.profile.imageUrl}
                       />
                     </Nav.Item>

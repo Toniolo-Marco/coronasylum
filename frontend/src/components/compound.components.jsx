@@ -16,7 +16,6 @@ export default function Compound({ query, ...rest }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     downloadData(query).then((res) => {
-      //console.log(res.data);
       let arr = [];
       if (res.data) {
         arr = res.data;
@@ -44,8 +43,6 @@ export default function Compound({ query, ...rest }) {
         <div>
           <Row>
             <Col xs={6}>
-              <h3 className={`${ColorStyle.colorWhite1}`}></h3>
-
               <Chart
                 data={data}
                 params={{

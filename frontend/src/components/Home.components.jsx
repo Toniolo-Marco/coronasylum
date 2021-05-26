@@ -28,7 +28,6 @@ export default function Home() {
   const query = { slug: "italy", country: "Italy" };
   useEffect(() => {
     downloadData(query).then((res) => {
-      console.log(res.data);
       let arr = [];
       if (res.data) {
         arr = res.data;
@@ -54,7 +53,7 @@ export default function Home() {
             <img
               className={`${ImageStyle.imgHome1}`}
               src={covidfristimage}
-              alt={"virus image"}
+              alt={"virus"}
             />
           </Col>
 
@@ -236,25 +235,6 @@ export default function Home() {
           </Col>
           <Col xs={2} />
         </Row>
-
-        {/*
-      <GeneralChart
-        params={{
-          casetype: "Death",
-          country: "usa",
-          type: "line",
-          label: "Chart of Coronavirus death in ",
-          backgroundColor: "rgba(255, 99, 132, 0.5)",
-          borderColor: "rgba(255, 99, 132,1)",
-          pointRadius: 0,
-          responsive: true,
-          tooltips: {
-            enabled: true,
-            intersect: false,
-          },
-        }}
-      />
-      */}
       </Container>
     </React.Fragment>
   );

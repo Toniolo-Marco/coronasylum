@@ -5,13 +5,11 @@ import {
   Col,
   Container,
   Compound,
-  Filter,
   Authentication,
 } from "../index.import.js";
 import countries from "../utils/countries";
 export default function Today() {
   const auth = React.useContext(Authentication);
-  console.log(auth);
   return (
     <React.Fragment>
       <Row>
@@ -29,6 +27,7 @@ export default function Today() {
             );
           })}
       </Container>
+
     </React.Fragment>
   );
 }
