@@ -30,11 +30,7 @@ app.post("/api/auth", auth);
 
 require("./services/api.service");
 
-const moment = require("moment");
-require("./services/consumer.service")
-const {EventEmitter} = require("events");
-const clock = new EventEmitter();
-setInterval(() => clock.emit("time", moment()));
-require("./services/producer.service").startTimer(clock);
+require("./services/consumer.service");
+require("./services/producer.service");
 
 exports.app = functions.https.onRequest(app);

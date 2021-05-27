@@ -15,15 +15,14 @@ const updateCountry = async (slug) => {
     }
 };
 
-exports.startTimer = (clock) =>
-    clock.on("time", async (date) => {
-        if (date.isSame(moment().startOf("day").add(1, "hours"), "hour")) {
-            let countries = await Country.find({}).exec();
-            countries.forEach((e) =>
-                consumer.queue.push({ args: e.slug, func: updateCountry })
-            );
-        }
-    });
-
+setInterval(async () => {
+    let now = new Date();
+    if (now.getHours() === 2) {
+        let countries = await Country.find({}).exec();
+        countries.forEach((e) =>
+            consumer.queue.push({ args: e.slug, func: updateCountry })
+        );
+    }
+}, 3_600_000);
 
 exports.updateCountry = updateCountry;
