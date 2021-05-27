@@ -3,7 +3,7 @@
   "description": "Cloud Functions for Firebase",
   "scripts": {
     "convert": "node_modules/.bin/docsify-pdf-converter",
-    "serve": "firebase emulators:start --only functions",
+    "serve": "firebase start --only functions,hosting",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
