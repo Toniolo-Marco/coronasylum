@@ -200,8 +200,14 @@ export default function Home() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </Col>
-          <Col xs={7}>
-            <div style={{ height: "100%", width: "50%", margin: "auto" }}>
+          <Col xs={7} style={{ display: "flex", justifyContent: "center" }}>
+            <div
+              style={{
+                width: "100%",
+                margin: "auto",
+                fontSize: "2.5em",
+              }}
+            >
               {data && data.length > 7 && (
                 <Counter
                   data={data}
