@@ -9,6 +9,7 @@ import {
   useEffect,
   downloadData,
   Loading,
+  Counter,
 } from "../index.import.js";
 
 export default function Compound({ query, ...rest }) {
@@ -41,7 +42,7 @@ export default function Compound({ query, ...rest }) {
         <Loading />
       ) : (
         <div>
-          <Row>
+          <Row style={{ marginTop: "20px" }}>
             <Col xs={6}>
               <Chart
                 data={data}
@@ -95,7 +96,7 @@ export default function Compound({ query, ...rest }) {
               />
             </Col>
           </Row>
-          <Row>
+          <Row style={{ marginTop: "20px" }}>
             <Col xs={4}>
               <Chart
                 data={data}
@@ -116,6 +117,17 @@ export default function Compound({ query, ...rest }) {
                   },
                 }}
               />
+              {data && data.length > 7 && (
+                <Counter
+                  data={data}
+                  params={{
+                    category: "total",
+                    status: "Active",
+                    country: query.country,
+                    duration: 5,
+                  }}
+                />
+              )}
             </Col>
             <Col xs={4}>
               <Chart
@@ -137,6 +149,17 @@ export default function Compound({ query, ...rest }) {
                   },
                 }}
               />
+              {data && data.length > 7 && (
+                <Counter
+                  data={data}
+                  params={{
+                    category: "total",
+                    status: "Recovered",
+                    country: query.country,
+                    duration: 5,
+                  }}
+                />
+              )}
             </Col>
             <Col xs={4}>
               <Chart
@@ -158,6 +181,17 @@ export default function Compound({ query, ...rest }) {
                   },
                 }}
               />
+              {data && data.length > 7 && (
+                <Counter
+                  data={data}
+                  params={{
+                    category: "total",
+                    status: "Deaths",
+                    country: query.country,
+                    duration: 5,
+                  }}
+                />
+              )}
             </Col>
           </Row>
           <Row>

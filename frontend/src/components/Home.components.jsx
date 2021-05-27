@@ -201,17 +201,19 @@ export default function Home() {
             </p>
           </Col>
           <Col xs={7}>
-            {data && data.length > 7 && (
-              <Counter
-                data={data}
-                params={{
-                  category: "total",
-                  status: "Active",
-                  country: query.country,
-                  duration: 5,
-                }}
-              />
-            )}
+            <div style={{ height: "100%", width: "50%", margin: "auto" }}>
+              {data && data.length > 7 && (
+                <Counter
+                  data={data}
+                  params={{
+                    category: "total",
+                    status: "Active",
+                    country: query.country,
+                    duration: 5,
+                  }}
+                />
+              )}
+            </div>
           </Col>
           <Col xs={1} />
         </Row>
