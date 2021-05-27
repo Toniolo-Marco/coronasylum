@@ -18,16 +18,23 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const {
-  checkUpdates,
   updateCountry,
+  forceUpdate,
 } = require("./controllers/update.controller");
 app.use(cors(corsOptions));
 app.use(express.json());
 app.get("/api/total/country/:country", getDataByCountry);
 app.get("/api/update/:country", updateCountry);
-app.post("/api/update", checkUpdates);
+app.get("/api/update", forceUpdate);
 app.post("/api/auth", auth);
 
-const { default: buildQuery, getData } = require("./services/api.service");
+require("./services/api.service");
+
+const moment = require("moment");
+require("./services/consumer.service")
+const {EventEmitter} = require("events");
+const clock = new EventEmitter();
+setInterval(() => clock.emit("time", moment()));
+require("./services/producer.service").startTimer(clock);
 
 exports.app = functions.https.onRequest(app);

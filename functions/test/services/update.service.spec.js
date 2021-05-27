@@ -126,11 +126,5 @@ describe("test jobs to run", () => {
                 expect(c.updatedAt).to.be.afterTime(lastUpdated);
             }).exec();
         });
-        it("should update only if last update was before yesterday", async () => {
-            await update.runCountryTotalDump(country);
-
-            let addedRows = await update.runCountryDataUpdate(country);
-            expect(addedRows).to.equal(0);
-        })
     });
 });
