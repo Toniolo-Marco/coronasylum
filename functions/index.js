@@ -18,16 +18,19 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const {
-  checkUpdates,
   updateCountry,
+  forceUpdate,
 } = require("./controllers/update.controller");
 app.use(cors(corsOptions));
 app.use(express.json());
 app.get("/api/total/country/:country", getDataByCountry);
 app.get("/api/update/:country", updateCountry);
-app.post("/api/update", checkUpdates);
+app.get("/api/update", forceUpdate);
 app.post("/api/auth", auth);
 
-const { default: buildQuery, getData } = require("./services/api.service");
+require("./services/api.service");
+
+require("./services/consumer.service");
+require("./services/producer.service");
 
 exports.app = functions.https.onRequest(app);

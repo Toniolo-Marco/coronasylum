@@ -2,15 +2,8 @@ const { default: Country } = require("../models/country.model");
 const { default: dataTask } = require("../services/data.task.service");
 const update = require("../services/update.service");
 const { StatusCodes } = require("http-status-codes");
-
-const checkUpdates = (req, res) => {
-    if (req.body && req.body.pwd === "1234") {
-        dataTask.emit("start");
-        res.status(200).send();
-    } else {
-        res.status(400).send();
-    }
-};
+const { consumer } = require("../services/consumer.service.js")
+const { updateCountry: uc } = require("../services/producer.service.js")
 
 const updateCountry = async (req, res) => {
     try {
@@ -25,9 +18,19 @@ const updateCountry = async (req, res) => {
             throw new Error("Params must contain a 'country' slug");
         }
     } catch (err) {
-        res.status(StatusCodes.BAD_REQUEST).send(err instanceof Error && err.message);
+        res.status(StatusCodes.BAD_REQUEST).send(
+            err instanceof Error && err.message
+        );
     }
 };
 
-exports.checkUpdates = checkUpdates;
+const forceUpdate = async (_, res) => {
+    let countries = await Country.find({}).exec();
+    countries.forEach((e) =>
+        consumer.push({ args: e.Slug, func: uc })
+    );
+    res.status(StatusCodes.OK).send();
+};
+
 exports.updateCountry = updateCountry;
+exports.forceUpdate = forceUpdate;
