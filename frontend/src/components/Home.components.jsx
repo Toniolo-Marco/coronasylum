@@ -68,14 +68,10 @@ export default function Home() {
               <p
                 className={`${TextStyle.txtcenterjustify} ${ColorStyle.colorGrey5}`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed
-                eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrum exercitationem ullam corporis
-                suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
-                Quis aute iure reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint obcaecat
-                cupiditat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+                In this site you have an easy access to Covid-19 data from every country of the world.
+                This is a non-profit project, realized in may 2021. Our mission is to spread official information in a clear way, which everyone can understand.
+                <br/>
+                Start exploring now:
               </p>
 
               <br />
@@ -190,13 +186,10 @@ export default function Home() {
           <Col>
             <h3 className={`${ColorStyle.colorWhite1}`}>Real Time counter:</h3>
             <p className={` ${ColorStyle.colorGrey5}`}>
-              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
-              tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute
-              iure reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Maybe have 24 hours old data is not enough; that's why we designed a real time counter. 
+              This component permit you to know what's going on (more or less). It is based on the trend of the last week, therefore it can incerease and degrease too! 
+              To have an accurate number we suggest you to refresh the page daily, actully our dataset refresh countries one by one at 1:00AM(UTC+0).
+              For example, on the right you have the counter of active case in Italy in this moment.
             </p>
           </Col>
           <Col xs={7} style={{ display: "flex", justifyContent: "center" }}>

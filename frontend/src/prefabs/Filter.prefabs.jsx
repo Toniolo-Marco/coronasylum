@@ -12,9 +12,31 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px",
     borderRadius: "5px",
 
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#007bff',
+    },
+
+    "& > * > * >  .MuiFormLabel-root": {
+      color: "white",
+    },
+
     "& > * > * > * > .MuiChip-root": {
       backgroundColor: "#007bfc",
+      color: "white",
     },
+    "& > * > * > * > * > .MuiSvgIcon-root": {
+      color: "white",
+    },
+
+    "& > * > * > * > .MuiInputBase-input":{
+      color: "white",
+    },
+
+
+    "& > * > * > * > * > * > * > .MuiSvgIcon-root":{
+      color: "white",
+    },
+
     width: 500,
     "& > * + *": {
       marginTop: theme.spacing(3),
