@@ -24,12 +24,10 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/About" component={About} />
-            <Route exact path="/About/API" component={API} />
+            <Route path="/About/:tab" component={About} />
             <Route exact path="/Contacts" component={Contacts} />
             <Route exact path="/Covid19" component={Covid19} />
-            <Route exact path="/About/Developer" component={Developer} />
-            <Route exact path="/About/Database" component={Database} />
+
             <Route path="/Today" component={Today} />
 
             {/*

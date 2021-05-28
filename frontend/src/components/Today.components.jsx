@@ -33,7 +33,6 @@ export default function Today() {
         }}
       >
         <Filter
-          style={{ color: "white" }}
           listOfCountries={listOfCountries}
           setListOfCountries={setListOfCountries}
         />

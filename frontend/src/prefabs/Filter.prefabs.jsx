@@ -8,16 +8,20 @@ import countries from "../utils/countries";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "white",
+    backgroundColor: "rgba(0,0,0,0)",
     padding: "20px",
     borderRadius: "5px",
-    inputRoot: {
-      backgroundColor: "white",
+
+    "& > * > * > * > .MuiChip-root": {
+      backgroundColor: "#007bfc",
     },
     width: 500,
     "& > * + *": {
       marginTop: theme.spacing(3),
     },
+  },
+  inputRoot: {
+    backgroundColor: "blue",
   },
 }));
 
@@ -39,7 +43,7 @@ export default function Tags({ listOfCountries, setListOfCountries }) {
         renderInput={(params) => (
           <TextField
             {...params}
-            variant="filled"
+            variant="standard"
             label="Countries"
             placeholder="Type Here..."
           />
