@@ -1,3 +1,4 @@
+import { Component } from "react";
 import {
   React,
   Chart,
@@ -12,35 +13,40 @@ import {
   Counter,
 } from "../index.import.js";
 
-export default function Compound({ query, ...rest }) {
-  const [data, setData] = useState([]);
+export default function Compound({ auth, query, ...rest }) {
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    downloadData(query).then((res) => {
-      let arr = [];
-      if (res.data) {
-        arr = res.data;
-      }
-      setData(arr);
-    });
-  }, []);
+  const [authorized, setAuthorized] = useState(true);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (data.length !== 0) {
-      setIsLoading(false);
-    }
-  }, [data]);
+    downloadData(query, auth)
+      .then((res) => {
+        setAuthorized(true);
 
-  return (
-    <React.Fragment>
-      <Row>
-        <Col>
-          <h3 className={`${ColorStyle.colorWhite1}`}>{query.country}</h3>
-        </Col>
-      </Row>
-      {isLoading ? (
-        <Loading />
-      ) : (
+        let arr = [];
+        if (res.data) {
+          arr = res.data;
+        }
+        setData(arr);
+
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setAuthorized(false);
+
+        setIsLoading(false);
+      });
+  }, [auth]);
+
+  function component() {
+    if (isLoading) {
+      return <Loading />;
+    } else if (!authorized) {
+      return <div>non loggato</div>;
+    } else if (data.length === 0) {
+      return <div>no data</div>;
+    } else {
+      return (
         <div>
           <Row style={{ marginTop: "20px" }}>
             <Col xs={6}>
@@ -199,7 +205,18 @@ export default function Compound({ query, ...rest }) {
             <Col></Col>
           </Row>
         </div>
-      )}
+      );
+    }
+  }
+
+  return (
+    <React.Fragment>
+      <Row>
+        <Col>
+          <h3 className={`${ColorStyle.colorWhite1}`}>{query.country}</h3>
+        </Col>
+      </Row>
+      {component()}
     </React.Fragment>
   );
 }

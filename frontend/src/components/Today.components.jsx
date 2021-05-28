@@ -19,33 +19,41 @@ export default function Today() {
     console.log(listOfCountries);
   }, [listOfCountries]);
   return (
-    <div style={{ minHeight: "100vh" }}>
-      <Row>
-        <Col>
-          <Navbar />
-        </Col>
-      </Row>
+    <Authentication.Consumer>
+      {(auth) => (
+        <div style={{ minHeight: "100vh" }}>
+          <Row>
+            <Col>
+              <Navbar />
+            </Col>
+          </Row>
 
-      <Row
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Filter
-          listOfCountries={listOfCountries}
-          setListOfCountries={setListOfCountries}
-        />
-      </Row>
-      <Container fluid>
-        {countries
-          .filter((e) => listOfCountries.includes(e.slug))
-          .map((e) => {
-            return (
-              <Compound key={e.slug} query={{ ...e, category: "total" }} />
-            );
-          })}
-      </Container>
-    </div>
+          <Row
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Filter
+              listOfCountries={listOfCountries}
+              setListOfCountries={setListOfCountries}
+            />
+          </Row>
+          <Container fluid>
+            {countries
+              .filter((e) => listOfCountries.includes(e.slug))
+              .map((e) => {
+                return (
+                  <Compound
+                    key={e.slug}
+                    auth={auth}
+                    query={{ ...e, category: "total" }}
+                  />
+                );
+              })}
+          </Container>
+        </div>
+      )}
+    </Authentication.Consumer>
   );
 }

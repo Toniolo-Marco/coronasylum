@@ -18,11 +18,11 @@ import {
   downloadData,
   useEffect,
   Counter,
+  Authentication,
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
 
 export default function Home() {
-  const wdate = "2021-05-17";
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const query = { slug: "italy", country: "Italy" };
@@ -157,7 +157,6 @@ export default function Home() {
             <Histogram
               data={data}
               params={{
-                whichDate: wdate,
                 country: "Italy",
 
                 type: "bar",
