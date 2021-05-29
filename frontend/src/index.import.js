@@ -24,6 +24,7 @@ export {
   Spinner,
   Card,
   FormCheck,
+  Alert,
 } from "react-bootstrap";
 export { default as Bootstrap } from "bootstrap/dist/css/bootstrap.min.css";
 
