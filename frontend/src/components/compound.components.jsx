@@ -11,6 +11,7 @@ import {
   downloadData,
   Loading,
   Counter,
+  NoData,
 } from "../index.import.js";
 
 export default function Compound({ auth, query, ...rest }) {
@@ -44,7 +45,7 @@ export default function Compound({ auth, query, ...rest }) {
     } else if (!authorized) {
       return <div>non loggato</div>;
     } else if (data.length === 0) {
-      return <div>no data</div>;
+      return <NoData />;
     } else {
       return (
         <div>

@@ -54,6 +54,7 @@ export { default as Developer } from "./components/About.Developer.components";
 export { default as Contacts } from "./components/Contacts.components";
 export { default as Covid19 } from "./components/Covid19.components";
 export { default as Today } from "./components/Today.components";
+export { default as NoData } from "./components/noData.components";
 
 //prefabs
 export { default as Navbar } from "./prefabs/Navbar.prefabs";
