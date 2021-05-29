@@ -12,6 +12,7 @@ import {
   Loading,
   Counter,
   NoData,
+  NotAuthorized,
 } from "../index.import.js";
 
 export default function Compound({ auth, query, ...rest }) {
@@ -43,7 +44,12 @@ export default function Compound({ auth, query, ...rest }) {
     if (isLoading) {
       return <Loading />;
     } else if (!authorized) {
-      return <div>non loggato</div>;
+      return (
+        <React.Fragment>
+          <div id="notAuthorized" />
+          <NotAuthorized />
+        </React.Fragment>
+      );
     } else if (data.length === 0) {
       return <NoData />;
     } else {
