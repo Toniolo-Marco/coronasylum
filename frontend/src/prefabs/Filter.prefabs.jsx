@@ -1,43 +1,58 @@
 /* eslint-disable no-use-before-define */
-import React from "react";
+import { React, Col, Row } from "../index.import";
 import Chip from "@material-ui/core/Chip";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import Checkbox from "@material-ui/core/Checkbox";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+
+import FormLabel from "@material-ui/core/FormLabel";
+
 import countries from "../utils/countries";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: "flex",
     backgroundColor: "rgba(0,0,0,0)",
     padding: "20px",
     borderRadius: "5px",
 
-    '& .MuiInput-underline:after': {
-      borderBottomColor: '#007bff',
+    "& > * .MuiInput-underline:after": {
+      borderBottomColor: "#007bff",
     },
 
-    "& > * > * >  .MuiFormLabel-root": {
+    "& > * > .MuiAutocomplete-root": {
+      width: "100%",
+      borderBottomColor: "#b0b0b0",
+      marginTop: "auto",
+      marginBottom: "auto",
+    },
+
+    "& > * > * > * > .MuiFormLabel-root": {
       color: "white",
     },
 
-    "& > * > * > * > .MuiChip-root": {
+    "& > * > * > * > * > .MuiChip-root": {
       backgroundColor: "#007bfc",
       color: "white",
     },
-    "& > * > * > * > * > .MuiSvgIcon-root": {
+    "& > * > * > * > * > * > .MuiSvgIcon-root": {
       color: "white",
     },
 
-    "& > * > * > * > .MuiInputBase-input":{
+    "& > * > * > * > * > .MuiInputBase-input": {
       color: "white",
     },
 
-
-    "& > * > * > * > * > * > * > .MuiSvgIcon-root":{
+    "& > * > * > * > * > * > * > * > .MuiSvgIcon-root": {
       color: "white",
     },
 
-    width: 500,
+    width: "100%",
+
     "& > * + *": {
       marginTop: theme.spacing(3),
     },
@@ -47,30 +62,100 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Tags({ listOfCountries, setListOfCountries }) {
+export default function Tags({
+  listOfCountries,
+  setListOfCountries,
+  viewCounters,
+  setViewCounters,
+  viewHistogram,
+  setViewHistogram,
+  viewChartTotalCases,
+  setViewChartTotalCases,
+}) {
   const classes = useStyles();
   const handleChange = (e, v) => {
     setListOfCountries(v.map((el) => el.slug));
   };
 
   return (
-    <div className={classes.root}>
-      <Autocomplete
-        multiple
-        id="tags-standard"
-        options={countries}
-        getOptionLabel={(option) => option.country}
-        onChange={handleChange}
-        defaultValue={[]}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            variant="standard"
-            label="Countries"
-            placeholder="Type Here..."
+    <React.Fragment>
+      <div className={classes.root}>
+        <Col xs={6} style={{ display: "flex" }}>
+          <Autocomplete
+            multiple
+            id="tags-standard"
+            options={countries}
+            getOptionLabel={(option) => option.country}
+            onChange={handleChange}
+            defaultValue={[]}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                variant="standard"
+                label="Countries"
+                placeholder="Type Here..."
+              />
+            )}
           />
-        )}
-      />
-    </div>
+        </Col>
+
+        <Col xs={6}>
+          <FormControl style={{ width: "100%" }}>
+            <FormGroup
+              style={{
+                display: "inline",
+                width: "100%",
+                justifyContent: "space-around",
+              }}
+            >
+              <FormControlLabel
+                value="Counters"
+                control={
+                  <Checkbox
+                    defaultChecked
+                    color="primary"
+                    style={{
+                      color: "#007bfc",
+                    }}
+                  />
+                }
+                label="Counters"
+                labelPlacement="end"
+                style={{ color: "white", width: "auto" }}
+              />
+
+              <FormControlLabel
+                value="Histogram"
+                control={
+                  <Checkbox
+                    defaultChecked
+                    color="primary"
+                    style={{ color: "#007bfc" }}
+                  />
+                }
+                label="Histogram"
+                labelPlacement="end"
+                style={{ color: "white", width: "auto" }}
+              />
+
+              <FormControlLabel
+                value="ChartTotalCases"
+                control={
+                  <Checkbox
+                    defaultChecked
+                    color="primary"
+                    style={{ color: "#007bfc" }}
+                  />
+                }
+                label="Chart of Total Cases"
+                labelPlacement="end"
+                style={{ color: "white", width: "auto" }}
+              />
+            </FormGroup>
+            <FormGroup></FormGroup>
+          </FormControl>
+        </Col>
+      </div>
+    </React.Fragment>
   );
 }

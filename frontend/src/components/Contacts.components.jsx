@@ -14,9 +14,9 @@ export default function Contacts() {
   return (
     <div>
       <Navbar />
-      <Container>
+      <Container fluid style={{ minHeight: "100vh", paddingTop: "50px" }}>
         <h1 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
-          Contacts us at: CoronAsylum
+          Contacts:
         </h1>
         <Row>
           <Col></Col>
@@ -37,9 +37,7 @@ export default function Contacts() {
         </Row>
         <Row>
           <Col></Col>
-          <Col xs={6}>
-            <Form />
-          </Col>
+          <Col xs={6}></Col>
           <Col></Col>
         </Row>
       </Container>
