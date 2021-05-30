@@ -4,19 +4,21 @@ import {
   useState,
   Home,
   About,
-  API,
   Contacts,
-  Covid19,
-  Developer,
-  Database,
   ColorStyle,
-  Today,
+  Explore,
   DivStyle,
   Authentication,
 } from "./index.import";
+import publicIp from "public-ip";
 
 function App() {
   const [user, setUser] = useState({});
+  const [ip, setIp] = useState(
+    (async () => {
+      return await publicIp.v4();
+    })()
+  );
 
   return (
     <div className={`${ColorStyle.bgGrey1} ${DivStyle.divOverflowHidden} `}>
@@ -26,9 +28,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/About/:tab" component={About} />
             <Route exact path="/Contacts" component={Contacts} />
-            <Route exact path="/Covid19" component={Covid19} />
-
-            <Route path="/Today" component={Today} />
+            <Route path="/Explore" component={Explore} />
 
             {/*
         <Route path="/login" component={Login} />

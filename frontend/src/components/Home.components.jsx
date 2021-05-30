@@ -231,10 +231,16 @@ export default function Home() {
               <h1>What's Covid-19?</h1>
               <h5>
                 It's remarkable for everyone to be aware about what's going on
-                out there. You can learn more on our website just pressing the
-                button below!
+                out there. The world Health Organization wrote articles on
+                prevention, symptoms and myth busters. You can learn more on our
+                website pressing the button below!
               </h5>
-              <Button href="/covid19" variant="primary">
+              <br />
+              <Button
+                target="_blank"
+                href="https://www.who.int/health-topics/coronavirus#tab=tab_1"
+                variant="primary"
+              >
                 Learn more
               </Button>
             </Jumbotron>

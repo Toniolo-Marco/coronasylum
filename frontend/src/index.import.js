@@ -45,18 +45,17 @@ export { default as Histogram } from "./components/histogram.components";
 export { default as Counter } from "./components/counter.components";
 export { default as Loading } from "./components/loading.components";
 export { default as Compound } from "./components/compound.components";
+export { default as NoData } from "./components/noData.components";
+export { default as NotAuthorized } from "./components/notAuthorized.components";
+export { default as API } from "./components/About.API.components";
+export { default as Database } from "./components/About.Database.components";
+export { default as Developer } from "./components/About.Developer.components";
 
 //pages
 export { default as Home } from "./components/Home.components";
 export { default as About } from "./components/About.components";
-export { default as API } from "./components/About.API.components";
-export { default as Database } from "./components/About.Database.components";
-export { default as Developer } from "./components/About.Developer.components";
 export { default as Contacts } from "./components/Contacts.components";
-export { default as Covid19 } from "./components/Covid19.components";
-export { default as Today } from "./components/Today.components";
-export { default as NoData } from "./components/noData.components";
-export { default as NotAuthorized } from "./components/notAuthorized.components";
+export { default as Explore } from "./components/Explore.components";
 
 //prefabs
 export { default as Navbar } from "./prefabs/Navbar.prefabs";

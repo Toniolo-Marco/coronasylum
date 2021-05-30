@@ -18,10 +18,7 @@ export default function Navbar() {
             <NB.Brand href="/">CoronAsylum</NB.Brand>
             <Nav className="mr-auto">
               <Nav.Item>
-                <Nav.Link href="/Covid19">Covid-19</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="/Today">Today</Nav.Link>
+                <Nav.Link href="/Explore">Explore</Nav.Link>
               </Nav.Item>
               <NavDropdown
                 className={`${NavbarStyle.navitem} ${NavbarStyle.dropdownmenu}`}

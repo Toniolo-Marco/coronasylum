@@ -12,7 +12,7 @@ import {
 } from "../index.import.js";
 import countries from "../utils/countries";
 
-export default function Today() {
+export default function Explore() {
   const [listOfCountries, setListOfCountries] = useState([]);
   const [viewCounters, setViewCounters] = useState(true);
   const [viewHistogram, setViewHistogram] = useState(true);
@@ -39,6 +39,7 @@ export default function Today() {
             }}
           >
             <Filter
+              auth={auth}
               listOfCountries={listOfCountries}
               setListOfCountries={setListOfCountries}
               viewCounters={viewCounters}
