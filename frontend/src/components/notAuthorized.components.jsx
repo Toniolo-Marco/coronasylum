@@ -16,8 +16,8 @@ export default function NotAuthorized() {
       style={{
         background: "linear-gradient(#303030, #000000)",
         minHeight: "100vh",
-        marginRight: "-1%",
-        marginLeft: "-1%",
+        marginRight: "-5%",
+        marginLeft: "-5%",
         zIndex: "100",
         display: "flex",
       }}

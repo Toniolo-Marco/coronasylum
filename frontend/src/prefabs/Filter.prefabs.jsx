@@ -77,6 +77,18 @@ export default function Tags({
     setListOfCountries(v.map((el) => el.slug));
   };
 
+  const handleChangeViewCounters = (event) => {
+    setViewCounters(event.target.checked);
+  };
+
+  const handleChangeViewHistogram = (event) => {
+    setViewHistogram(event.target.checked);
+  };
+
+  const handleChangeViewChartTotalCases = (event) => {
+    setViewChartTotalCases(event.target.checked);
+  };
+
   return (
     <React.Fragment>
       <div className={classes.root}>
@@ -112,11 +124,12 @@ export default function Tags({
                 value="Counters"
                 control={
                   <Checkbox
-                    defaultChecked
+                    checked={viewCounters}
                     color="primary"
                     style={{
                       color: "#007bfc",
                     }}
+                    onChange={handleChangeViewCounters}
                   />
                 }
                 label="Counters"
@@ -128,9 +141,10 @@ export default function Tags({
                 value="Histogram"
                 control={
                   <Checkbox
-                    defaultChecked
+                    checked={viewHistogram}
                     color="primary"
                     style={{ color: "#007bfc" }}
+                    onChange={handleChangeViewHistogram}
                   />
                 }
                 label="Histogram"
@@ -142,9 +156,10 @@ export default function Tags({
                 value="ChartTotalCases"
                 control={
                   <Checkbox
-                    defaultChecked
+                    checked={viewChartTotalCases}
                     color="primary"
                     style={{ color: "#007bfc" }}
+                    onChange={handleChangeViewChartTotalCases}
                   />
                 }
                 label="Chart of Total Cases"

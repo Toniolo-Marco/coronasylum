@@ -59,6 +59,9 @@ export default function Explore() {
                     key={e.slug}
                     auth={auth}
                     query={{ ...e, category: "total" }}
+                    viewCounters={viewCounters}
+                    viewHistogram={viewHistogram}
+                    viewChartTotalCases={viewChartTotalCases}
                   />
                 );
               })}
