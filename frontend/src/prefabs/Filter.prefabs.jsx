@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Tags({
+  auth,
   listOfCountries,
   setListOfCountries,
   viewCounters,
@@ -73,6 +74,18 @@ export default function Tags({
   setViewChartTotalCases,
 }) {
   const classes = useStyles();
+
+  const handleOptionDisabled = (e) => {
+    console.log(listOfCountries);
+    if (auth && auth.user && auth.user.tokenId) {
+      return false;
+    } else if (listOfCountries.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const handleChange = (e, v) => {
     setListOfCountries(v.map((el) => el.slug));
   };
@@ -99,6 +112,7 @@ export default function Tags({
             options={countries}
             getOptionLabel={(option) => option.country}
             onChange={handleChange}
+            getOptionDisabled={handleOptionDisabled}
             defaultValue={[]}
             renderInput={(params) => (
               <TextField

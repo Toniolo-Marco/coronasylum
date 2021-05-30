@@ -14,7 +14,7 @@ import {
  * @returns {any}
  */
 export default function GeneralChart({ data, params, ...rest }) {
-  const ref = React.useRef(null);
+  const ref = React.createRef(null);
 
   useEffect(() => {
     let canvas = ref.current;
