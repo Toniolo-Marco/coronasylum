@@ -11,7 +11,8 @@ export async function downloadData(query, auth) {
 
   if (auth && auth.user && auth.user.tokenId) {
     headers.Authorization = auth.user.tokenId;
+    headers.Profile = JSON.stringify(auth.user);
   }
-
+  console.log(auth);
   return instance.get(`/total/country/${query.slug}`, { headers });
 }

@@ -1,10 +1,28 @@
 const { default: countryModel } = require("../models/country.model");
 const { default: DayData } = require("../models/daydata.model");
+const { default: UserStats } = require("../models/userstats.model");
+
 const { auth } = require("../services/auth.service");
 
 exports.getDataByCountry = async (req, res) => {
+  let profile = {};
+  let extra = {};
+  if (req.headers.profile) {
+    profile = JSON.parse(req.headers.profile);
+    extra.imageurl = profile.profile.imageUrl;
+    extra.mail = profile.profile.email;
+    extra.nickname = profile.profile.givenName;
+    extra.username = profile.profile.name;
+  }
+
+  let userStat = await new UserStats({
+    clientIp: req.headers.clientip,
+    browser: req.headers.browser,
+    country: req.params.country,
+    ...extra,
+  }).save();
   let tokenId = req.headers.authorization;
-  let user = await auth(tokenId);
+  let user = tokenId && (await auth(tokenId));
   console.log(req.headers);
 
   if (req.params.country !== "italy" && (tokenId === undefined || !user)) {

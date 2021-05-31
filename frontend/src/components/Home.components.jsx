@@ -29,14 +29,15 @@ export default function Home() {
 
   const query = { slug: "italy", country: "Italy" };
   useEffect(() => {
-    downloadData(query, auth).then((res) => {
-      let arr = [];
-      if (res.data) {
-        arr = res.data;
-      }
-      setData(arr);
-    });
-  }, []);
+    auth &&
+      downloadData(query, auth).then((res) => {
+        let arr = [];
+        if (res.data) {
+          arr = res.data;
+        }
+        setData(arr);
+      });
+  }, [auth]);
 
   useEffect(() => {
     if (data.length !== 0) {
