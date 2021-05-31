@@ -76,7 +76,6 @@ export default function Tags({
   const classes = useStyles();
 
   const handleOptionDisabled = (e) => {
-    console.log(listOfCountries);
     if (auth && auth.user && auth.user.tokenId) {
       return false;
     } else if (listOfCountries.length > 0) {

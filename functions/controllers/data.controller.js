@@ -5,6 +5,7 @@ const { auth } = require("../services/auth.service");
 exports.getDataByCountry = async (req, res) => {
   let tokenId = req.headers.authorization;
   let user = await auth(tokenId);
+  console.log(req.headers);
 
   if (req.params.country !== "italy" && (tokenId === undefined || !user)) {
     //ERRORE

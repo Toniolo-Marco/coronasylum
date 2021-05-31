@@ -51,6 +51,7 @@ export default function GeneralHistogram({ data, params, ...rest }) {
           },
         },
       });
+    return <div></div>;
   }, [data, ref.current]);
   return <canvas id="customizeChart" ref={ref}></canvas>;
 }

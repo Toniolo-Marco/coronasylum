@@ -4,6 +4,7 @@ import {
   React,
   useEffect,
   createRef,
+  useRef,
   apiDateToMonth,
   apiDateToString,
 } from "../index.import";
@@ -68,6 +69,7 @@ export default function GeneralChart({ data, params, ...rest }) {
           },
         },
       });
+    return <div></div>;
   }, [data, ref.current]);
   return <canvas id="customizeChart" ref={ref}></canvas>;
 }

@@ -19,9 +19,7 @@ export default function Explore() {
   const [viewChartTotalCases, setViewChartTotalCases] = useState(true);
 
   const auth = React.useContext(Authentication);
-  useEffect(() => {
-    console.log(listOfCountries);
-  }, [listOfCountries]);
+
   return (
     <Authentication.Consumer>
       {(auth) => (

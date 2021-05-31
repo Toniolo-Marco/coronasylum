@@ -25,9 +25,11 @@ import covidfristimage from "../img/imghome.png";
 export default function Home() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const auth = React.useContext(Authentication);
+
   const query = { slug: "italy", country: "Italy" };
   useEffect(() => {
-    downloadData(query).then((res) => {
+    downloadData(query, auth).then((res) => {
       let arr = [];
       if (res.data) {
         arr = res.data;

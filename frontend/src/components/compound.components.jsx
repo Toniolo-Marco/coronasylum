@@ -367,7 +367,7 @@ export function CreateCompound({
         </Row>
       </div>
     );
-  else if (!viewCounters && !viewHistogram && viewChartTotalCases)
+  else if (!viewCounters && !viewHistogram && viewChartTotalCases) {
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
@@ -465,7 +465,7 @@ export function CreateCompound({
         </Row>
       </div>
     );
-  else if (!viewCounters && viewHistogram && !viewChartTotalCases)
+  } else if (!viewCounters && viewHistogram && !viewChartTotalCases)
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
