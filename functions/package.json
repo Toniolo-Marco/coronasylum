@@ -29,6 +29,7 @@
     "mocha": "^8.4.0",
     "moment": "^2.29.1",
     "mongoose": "^5.12.9",
+    "node-schedule": "^2.0.0",
     "queue": "^6.0.2",
     "sinon": "^10.0.0",
     "sinon-chai": "^3.6.0",
