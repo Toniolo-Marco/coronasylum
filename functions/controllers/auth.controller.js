@@ -1,5 +1,3 @@
-const User = require("../models/user.model");
-
 exports.auth = (req, res) => {
   const { OAuth2Client } = require("google-auth-library");
   const client = new OAuth2Client(process.env.CLIENT_ID);

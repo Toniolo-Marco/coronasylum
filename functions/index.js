@@ -26,7 +26,6 @@ app.use(express.json());
 app.get("/api/total/country/:country", getDataByCountry);
 app.get("/api/update/:country", updateCountry);
 app.get("/api/update", forceUpdate);
-app.post("/api/auth", auth);
 
 require("./services/api.service");
 
