@@ -185,7 +185,7 @@ export default function Home() {
         <br />
         <Row>
           <Col xs={1} />
-          <Col>
+          <Col xs={4}>
             <h3 className={`${ColorStyle.colorWhite1}`}>Real Time counter:</h3>
             <p className={` ${ColorStyle.colorGrey5}`}>
               Maybe have 24 hours old data is not enough; that's why we designed
@@ -198,12 +198,12 @@ export default function Home() {
               in this moment.
             </p>
           </Col>
-          <Col xs={7} style={{ display: "flex", justifyContent: "center" }}>
+          <Col xs={6} style={{ display: "flex", justifyContent: "center" }}>
             <div
               style={{
                 width: "100%",
                 margin: "auto",
-                fontSize: "2.5em",
+                fontSize: "2.2em",
               }}
             >
               {data && data.length > 7 && (
