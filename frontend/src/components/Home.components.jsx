@@ -21,11 +21,14 @@ import {
   Authentication,
 } from "../index.import.js";
 import covidfristimage from "../img/imghome.png";
+import { useHistory } from "react-router-dom";
 
 export default function Home() {
+  let history = useHistory();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const auth = React.useContext(Authentication);
+  const [value, setValue] = useState();
 
   const query = { slug: "italy", country: "Italy" };
   useEffect(() => {
@@ -75,23 +78,19 @@ export default function Home() {
                 country of the world. This is a non-profit project, realized in
                 may 2021. Our mission is to spread official information in a
                 clear way, understandable to everyone.
-                <br />
+                <br /> <br />
                 Start exploring now:
+                <Button
+                  variant="primary"
+                  onClick={(e) => {
+                    history.push(`/Explore`);
+                  }}
+                  style={{ marginLeft: "35%" }}
+                >
+                  Explore
+                  <SearchIcon style={{ marginLeft: "15px" }} />
+                </Button>
               </p>
-
-              <br />
-              <InputGroup className="mb-3">
-                <FormControl
-                  placeholder="Search here..."
-                  aria-label="Search"
-                  aria-describedby="basic-addon2"
-                />
-                <InputGroup.Append>
-                  <Button variant="primary">
-                    <SearchIcon />
-                  </Button>{" "}
-                </InputGroup.Append>
-              </InputGroup>
             </div>
           </Col>
           <Col xs={1} />

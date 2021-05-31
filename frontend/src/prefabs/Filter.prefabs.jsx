@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import { React, Col, Row } from "../index.import";
+import { React, Col, Row, useState } from "../index.import";
 import Chip from "@material-ui/core/Chip";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -74,7 +74,6 @@ export default function Tags({
   setViewChartTotalCases,
 }) {
   const classes = useStyles();
-
   const handleOptionDisabled = (e) => {
     if (auth && auth.user && auth.user.tokenId) {
       return false;

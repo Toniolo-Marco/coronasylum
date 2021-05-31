@@ -25,6 +25,8 @@ export {
   Card,
   FormCheck,
   Alert,
+  Tab,
+  Tabs,
 } from "react-bootstrap";
 export { default as Bootstrap } from "bootstrap/dist/css/bootstrap.min.css";
 

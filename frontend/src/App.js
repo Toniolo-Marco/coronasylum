@@ -30,11 +30,6 @@ function App() {
             <Route path="/About/:tab" component={About} />
             <Route exact path="/Contacts" component={Contacts} />
             <Route path="/Explore" component={Explore} />
-
-            {/*
-        <Route path="/login" component={Login} />
-        <Route path="/singin" component={SingIn} />
-        */}
           </Switch>
         </Router>
       </Authentication.Provider>
