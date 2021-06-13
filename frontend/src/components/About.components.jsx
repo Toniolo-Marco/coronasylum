@@ -30,7 +30,7 @@ export default function About() {
     <React.Fragment>
       <div>
         <Navbar />
-        <Container style={{ minHeight: "100vh" }}>
+        <Container style={{ minHeight: "100vh", paddingBottom: "2%" }}>
           <Tabs defaultActiveKey={tab} id="uncontrolled-tab-example">
             <Tab eventKey="API" title="API">
               <Api />
@@ -51,7 +51,6 @@ export default function About() {
                 style={{ width: "18rem" }}
                 className={`${ColorStyle.bgGrey4}`}
               >
-                <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                   <Card.Title>Non-Relational Database</Card.Title>
                   <Card.Text>
@@ -73,7 +72,6 @@ export default function About() {
                 style={{ width: "18rem" }}
                 className={`${ColorStyle.bgGrey4}`}
               >
-                <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                   <Card.Title>What's an API?</Card.Title>
                   <Card.Text>
@@ -95,12 +93,11 @@ export default function About() {
                 style={{ width: "18rem" }}
                 className={`${ColorStyle.bgGrey4}`}
               >
-                <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
-                  <Card.Title>Database Management System</Card.Title>
+                  <Card.Title>DBMS</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    DBMS is the software that manage the DataBase, it get the
+                    results of a query and return them to us
                   </Card.Text>
                   <Button
                     variant="primary"
@@ -124,12 +121,30 @@ function Api() {
     <div style={{ marginTop: "5%" }}>
       <Row>
         <Col>
-          <h2 className={`${ColorStyle.colorWhite1}`}>Our API:</h2>
+          <h2 className={`${ColorStyle.colorWhite1}`}>Our API</h2>
         </Col>
       </Row>
       <Row>
         <Col>
-          <p className={` ${ColorStyle.colorGrey5}`}>TESTO API BLA BLA BLA</p>
+          <p
+            style={{ marginTop: "2%" }}
+            className={` ${ColorStyle.colorGrey5}`}
+          >
+            Our data are essentially provided by{" "}
+            <a href="https://covid19api.com/">Covid19 API</a>, this has saved us
+            a lot of work, as the COVID19 API team has already grouped data from
+            most countries in the world and is constantly updating it.
+            <br />
+            <br />
+            However, we had to develop our own API as theirs was limited to a
+            few calls per minute. Also for this reason we had to implement both
+            our database and a self-updating system. In this way the back end
+            updates our DB with the new data and at the same time serves the
+            front end, without any limitation of calls.
+            <br />
+            <br />
+            To view and download the code just click on the Documentation tab.
+          </p>
         </Col>
       </Row>
     </div>
@@ -137,11 +152,111 @@ function Api() {
 }
 
 function Database() {
-  return <div style={{ marginTop: "10%" }}></div>;
+  return (
+    <div style={{ marginTop: "5%" }}>
+      <Row>
+        <Col>
+          <h2 className={`${ColorStyle.colorWhite1}`}>
+            How we set up the DataBase
+          </h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p
+            style={{ marginTop: "2%" }}
+            className={` ${ColorStyle.colorGrey5}`}
+          >
+            To implement our DataBase we choose{" "}
+            <a href="https://www.mongodb.com/">MongoDB</a>. It is "a general
+            purpose, document-based, distributed database built for modern
+            application developers and for the cloud era."
+            <br />
+            <br />
+            It is faster than a normal DB and even simple. MongoDB is a NoSQL
+            database and uses filters to execute queries. It stores data in
+            JSON-like documents and it does not require the use of foreign keys.
+            In this way the DB is composed of several tables that are not
+            strictly linked to each other.
+          </p>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
 function Developer() {
-  return <div style={{ marginTop: "10%" }}></div>;
+  return (
+    <div style={{ marginTop: "5%" }}>
+      <Row>
+        <Col>
+          <h2 className={`${ColorStyle.colorWhite1}`}>Developer</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p
+            style={{ marginTop: "2%" }}
+            className={` ${ColorStyle.colorGrey5}`}
+          >
+            Hi, I'm Marco, a 19 years old guy from Italy. CoronAsylum is the
+            project for my final high school exam. Develop this web-app allowed
+            me to learn a lot of new things. Anyway my goal was not to learn, it
+            was actually to do something useful for everyone, to create a tool
+            that anyone, from anywhere in the world, could use.
+            <br />
+            <br />A special thanks goes to my cousin, Umberto, who was able to
+            advise me in the most critical points of the development. Moreover,
+            if this project is online, it is also thanks to my family, who
+            supported me during these months.
+            <br />
+            <br />
+          </p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h2 className={`${ColorStyle.colorWhite1}`}>School & Experience</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p
+            style={{ marginTop: "2%" }}
+            className={` ${ColorStyle.colorGrey5}`}
+          >
+            As I said, I am in the fifth and final year of computer science at
+            the{" "}
+            <a href="https://cerebotani.it/joomla/index.php">IIS Cerebotani</a>{" "}
+            high school. During the third year I had the opportunity to do an
+            internship with a local company. There I dealt more with the
+            hardware, preparing the computers that the company lent for special
+            occasions. Also during those thirty days I worked alongside the
+            technician, with him I repaired several PCs and tidied up the entire
+            warehouse.
+            <br />
+            <br />
+            In the fourth year, however, I spent my internship in a Web
+            Marketing company. They mainly deal with SEO positioning, e-commerce
+            and marketing strategies. There I discovered{" "}
+            <a href="https://wordpress.com/">WordPress</a> and its huge world.
+            In particular, I have dedicated myself to several e-commerce sites,
+            publishing hundreds of articles and customizing the aesthetics with
+            CSS. Initially use WordPress was complicated, in fact it is about
+            configuration and settings, not coding at all. However, this last
+            experience helped me find work the following year.
+            <br />
+            <br />
+            Indeed, during the summer I worked for three months in another
+            company that makes websites. There I exploited my skills and created
+            dozens of sites for companies all over Italy by myself.
+            Unfortunately, due to the covid, things got complicated and, with
+            the start of the last year, I could not extend my experience.
+          </p>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
 function Documentation() {
