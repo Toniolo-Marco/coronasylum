@@ -1,10 +1,7 @@
 import Chart from "chart.js";
-import moment from "moment";
 import {
   React,
   useEffect,
-  createRef,
-  useRef,
   apiDateToMonth,
   apiDateToString,
 } from "../index.import";

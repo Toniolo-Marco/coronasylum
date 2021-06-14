@@ -9,8 +9,6 @@ import {
   Jumbotron,
   Button,
   Container,
-  FormControl,
-  InputGroup,
   SearchIcon,
   Histogram,
   ImageStyle,

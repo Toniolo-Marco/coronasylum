@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define */
-import { React, Col, Row, useState } from "../index.import";
-import Chip from "@material-ui/core/Chip";
+import { React, Col } from "../index.import";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Checkbox from "@material-ui/core/Checkbox";
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,8 +7,6 @@ import TextField from "@material-ui/core/TextField";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-
-import FormLabel from "@material-ui/core/FormLabel";
 
 import countries from "../utils/countries";
 

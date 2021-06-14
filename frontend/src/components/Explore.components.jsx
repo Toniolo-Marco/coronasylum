@@ -8,9 +8,7 @@ import {
   Authentication,
   Filter,
   useState,
-  useEffect,
 } from "../index.import.js";
-import { useLocation } from "react-router-dom";
 import countries from "../utils/countries";
 
 export default function Explore() {

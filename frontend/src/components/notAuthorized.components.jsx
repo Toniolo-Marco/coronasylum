@@ -1,14 +1,4 @@
-import {
-  React,
-  Jumbotron,
-  Col,
-  Row,
-  ColorStyle,
-  Button,
-  Alert,
-  Login,
-} from "../index.import";
-import { IoWarningOutline } from "react-icons/io5";
+import { React, Col, Row, Alert, Login } from "../index.import";
 
 export default function NotAuthorized() {
   return (
