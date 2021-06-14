@@ -3,7 +3,7 @@ exports.auth = (req, res) => {
   const client = new OAuth2Client(process.env.CLIENT_ID);
 
   const token = req.body.accessToken;
-  const ticket = client
+  client
     .verifyIdToken({
       idToken: token,
       audience: process.env.CLIENT_ID,

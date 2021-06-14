@@ -77,7 +77,7 @@ export default function Home() {
                 In this site you have an easy access to Covid-19 data from every
                 country of the world. This is a non-profit project, realized in
                 may 2021. Our mission is to spread official information in a
-                clear way, understandable to everyone.
+                clear way, understandable by everyone.
                 <br /> <br />
                 Start exploring now:
                 <Button
@@ -102,7 +102,7 @@ export default function Home() {
           <Col xs={1} />
           <Col>
             <h2 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
-              Bad at Math? We don't care.
+              Bad at Math? Nevermind.
             </h2>
             <br />
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorGrey5}`}>
@@ -191,10 +191,10 @@ export default function Home() {
             <h3 className={`${ColorStyle.colorWhite1}`}>Real Time counter:</h3>
             <p className={` ${ColorStyle.colorGrey5}`}>
               Maybe have 24 hours old data is not enough; that's why we designed
-              a real time counter. This component permit you to know what's
+              a real time counter. This component allows you to know what's
               going on (more or less). It is based on the trend of the last
-              week, therefore it can incerease and degrease too! To have an
-              accurate number we suggest you to refresh the page daily, actully
+              week, therefore it can incerease and decrease too! To have an
+              accurate number we suggest you to refresh the page daily while
               our dataset refresh countries one by one at 1:00AM(UTC+0). For
               example, on the right you have the counter of active case in Italy
               in this moment.
@@ -233,8 +233,8 @@ export default function Home() {
               <h1>What's Covid-19?</h1>
               <h5>
                 It's remarkable for everyone to be aware about what's going on
-                out there. The world Health Organization wrote articles on
-                prevention, symptoms and myth busters. You can learn more on our
+                out there. The World Health Organization wrote articles on
+                prevention, symptoms and myth busters. You can learn more on the WHO's official
                 website pressing the button below!
               </h5>
               <br />

@@ -133,7 +133,7 @@ function Api() {
             Our data are essentially provided by{" "}
             <a href="https://covid19api.com/">Covid19 API</a>, this has saved us
             a lot of work, as the COVID19 API team has already grouped data from
-            most countries in the world and is constantly updating it.
+            most countries in the world and constantly updates it.
             <br />
             <br />
             However, we had to develop our own API as theirs was limited to a
@@ -199,14 +199,14 @@ function Developer() {
             style={{ marginTop: "2%" }}
             className={` ${ColorStyle.colorGrey5}`}
           >
-            Hi, I'm Marco, a 19 years old guy from Italy. CoronAsylum is the
-            project for my final high school exam. Develop this web-app allowed
-            me to learn a lot of new things. Anyway my goal was not to learn, it
-            was actually to do something useful for everyone, to create a tool
+            Hi, my name is Marco, I'm 19 and I live in Italy. CoronAsylum is the
+            project for my final high school exam. Developing this web-app allowed
+            me to learn a lot of new aspects of webapps coding. Anyway my goal was not only to learn, but 
+            to do something useful for everyone: create a tool
             that anyone, from anywhere in the world, could use.
             <br />
             <br />A special thanks goes to my cousin, Umberto, who was able to
-            advise me in the most critical points of the development. Moreover,
+            advise me in the most critical parts of the development. Moreover,
             if this project is online, it is also thanks to my family, who
             supported me during these months.
             <br />
@@ -236,22 +236,22 @@ function Developer() {
             warehouse.
             <br />
             <br />
-            In the fourth year, however, I spent my internship in a Web
+            In the fourth year I spent my internship in a Web
             Marketing company. They mainly deal with SEO positioning, e-commerce
-            and marketing strategies. There I discovered{" "}
-            <a href="https://wordpress.com/">WordPress</a> and its huge world.
-            In particular, I have dedicated myself to several e-commerce sites,
+            and marketing strategies. There I learnt{" "}
+            <a href="https://wordpress.com/">WordPress</a> and its huge ecosystem.
+            In particular, I have dedicated myself to several e-commerce websites,
             publishing hundreds of articles and customizing the aesthetics with
             CSS. Initially use WordPress was complicated, in fact it is about
             configuration and settings, not coding at all. However, this last
             experience helped me find work the following year.
             <br />
             <br />
-            Indeed, during the summer I worked for three months in another
-            company that makes websites. There I exploited my skills and created
+            During the summer I worked for three months in another
+            company that designs websites. There I exploited my skills and created
             dozens of sites for companies all over Italy by myself.
-            Unfortunately, due to the covid, things got complicated and, with
-            the start of the last year, I could not extend my experience.
+            Unfortunately, due to the covid outbreak, things got complicated and I wasn't able to extend 
+            my experience further.
           </p>
         </Col>
       </Row>
