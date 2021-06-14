@@ -260,5 +260,36 @@ function Developer() {
 }
 
 function Documentation() {
-  return <div style={{ marginTop: "10%" }}></div>;
+  return (
+    <div style={{ marginTop: "5%" }}>
+      <Row>
+        <Col>
+          <h2 className={`${ColorStyle.colorWhite1}`}>Documentation</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p
+            style={{ marginTop: "2%" }}
+            className={` ${ColorStyle.colorGrey5}`}
+          >
+            for security reasons the code is not yet public. You can contact me
+            at this email:{" "}
+            <a href="mailto:coronasylum@gmail.com">coronasylum@gmail.com</a> if
+            you want to receive a copy, or wait for it to be published here.
+            Inside the email I kindly ask you to specify the reason for the
+            request. Otherwise your email will not receive a reply.
+            <br />
+            <br />
+            In case of a bug or any problem with the site, I invite you to
+            describe it in an email, our team will fix it in a few days.
+            <br />
+            <br />
+            For any other information do not hesitate to contact us, we will try
+            to reply as soon as possible.
+          </p>
+        </Col>
+      </Row>
+    </div>
+  );
 }

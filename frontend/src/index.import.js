@@ -53,7 +53,6 @@ export { default as NotAuthorized } from "./components/notAuthorized.components"
 //pages
 export { default as Home } from "./components/Home.components";
 export { default as About } from "./components/About.components";
-export { default as Contacts } from "./components/Contacts.components";
 export { default as Explore } from "./components/Explore.components";
 
 //prefabs

@@ -36,13 +36,10 @@ export default function Navbar() {
                   Developer
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item eventKey="4.4">
-                  View all Documentation
+                <NavDropdown.Item eventKey="4.4" href="/about/Documentation">
+                  Documentation & Contacts
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Item>
-                <Nav.Link href="/Contacts">Contacts</Nav.Link>
-              </Nav.Item>
             </Nav>
             <React.Fragment>
               <Nav>

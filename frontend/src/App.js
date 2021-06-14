@@ -28,7 +28,6 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/About/:tab" component={About} />
-            <Route exact path="/Contacts" component={Contacts} />
             <Route path="/Explore" component={Explore} />
           </Switch>
         </Router>
