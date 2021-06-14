@@ -5,7 +5,7 @@ const { getDataByCountry } = require("./controllers/data.controller");
 const functions = require("firebase-functions");
 
 const uri = (dbname) =>
-  `mongodb+srv://User:1234@clustercorona.32baq.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+  `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@clustercorona.32baq.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 
 // DB connection
 require("./conf/db.conf").default(uri("coviddata"));
