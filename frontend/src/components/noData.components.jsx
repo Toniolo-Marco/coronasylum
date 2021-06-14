@@ -1,11 +1,4 @@
-import {
-  React,
-  Jumbotron,
-  Col,
-  Row,
-  ColorStyle,
-  Button,
-} from "../index.import";
+import { React, Jumbotron, Col, Row, ColorStyle } from "../index.import";
 import { IoWarningOutline } from "react-icons/io5";
 
 export default function NoData() {

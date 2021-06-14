@@ -1,5 +1,5 @@
 import Chart from "chart.js";
-import { React, useEffect, createRef } from "../index.import";
+import { React, useEffect } from "../index.import";
 
 //https://api.covid19api.com/live/country/south-africa
 

@@ -3,7 +3,6 @@ import {
   React,
   Navbar,
   ColorStyle,
-  TextStyle,
   useEffect,
   Row,
   Tab,

@@ -23,7 +23,7 @@ exports.getDataByCountry = async (req, res) => {
   }).save();
   let tokenId = req.headers.authorization;
   let user = tokenId && (await auth(tokenId));
-  console.log(req.headers);
+  //console.log(req.headers);
 
   if (req.params.country !== "italy" && (tokenId === undefined || !user)) {
     //ERRORE

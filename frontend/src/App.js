@@ -5,7 +5,6 @@ import {
   useState,
   Home,
   About,
-  Contacts,
   ColorStyle,
   Explore,
   DivStyle,
