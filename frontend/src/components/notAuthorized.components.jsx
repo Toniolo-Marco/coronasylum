@@ -1,4 +1,4 @@
-import { React, Col, Row, Alert, Login } from "../index.import";
+import { React, Col, Row, Alert, Login, Container } from "../index.import";
 
 export default function NotAuthorized() {
   return (
@@ -16,11 +16,10 @@ export default function NotAuthorized() {
         style={{
           marginTop: "auto",
           marginBottom: "auto",
-          width: "100%",
         }}
       >
-        <Col xs={4} />
-        <Col xs={4}>
+        <Col md={4} xs={1} />
+        <Col md={4} xs={10}>
           <Alert variant="dark">
             <Alert.Heading>Oh no!</Alert.Heading>
             <p>It seems you haven't logged in yet, please login to view data</p>
@@ -28,7 +27,7 @@ export default function NotAuthorized() {
             <Login />
           </Alert>
         </Col>
-        <Col xs={4} />
+        <Col md={4} xs={1} />
       </Row>
     </div>
   );

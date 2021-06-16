@@ -52,8 +52,8 @@ export default function Home() {
       <br />
       <Container fluid>
         <Row>
-          <Col xs={1} />
-          <Col xs={5}>
+          <Col md={1} xs={0} />
+          <Col md={5} xs={12}>
             <img
               className={`${ImageStyle.imgHome1}`}
               src={covidfristimage}
@@ -61,7 +61,11 @@ export default function Home() {
             />
           </Col>
 
-          <Col className={`${TextStyle.txtverticalmiddle}`}>
+          {/*Normal size*/}
+          <Col
+            md={5}
+            className={`${TextStyle.txtverticalmiddle} d-none d-sm-block`}
+          >
             <div>
               <h1 className={`${ColorStyle.colorWhite1}`}>
                 CoronAsylum: From Everywhere To Everyone
@@ -91,13 +95,47 @@ export default function Home() {
               </p>
             </div>
           </Col>
-          <Col xs={1} />
+          {/*Mobile size*/}
+          <Col
+            md={0}
+            xs={12}
+            className={`${TextStyle.txtverticalmiddle} d-block d-sm-none`}
+          >
+            <div>
+              <h1 className={`${ColorStyle.colorWhite1}`}>
+                CoronAsylum: From Everywhere To Everyone
+              </h1>
+              <h2 className={`${ColorStyle.colorBlue1}`}>—</h2>
+              <p
+                className={`${TextStyle.txtcenterjustify} ${ColorStyle.colorGrey5}`}
+              >
+                In this site you have an easy access to Covid-19 data from every
+                country of the world. This is a non-profit project, realized in
+                may 2021. Our mission is to spread official information in a
+                clear way, understandable by everyone.
+              </p>
+              <br /> <br />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button
+                  variant="primary"
+                  onClick={(e) => {
+                    history.push(`/explore`);
+                  }}
+                >
+                  Explore
+                  <SearchIcon style={{ marginLeft: "15px" }} />
+                </Button>
+              </div>
+            </div>
+          </Col>
+
+          <Col md={1} xs={0} />
         </Row>
         <br />
         <br />
         <br />
         <Row>
-          <Col xs={1} />
+          <Col md={1} xs={0} />
           <Col>
             <h2 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               Bad at Math? Nevermind.
@@ -108,13 +146,13 @@ export default function Home() {
               of graphs to facilitate the understanding of numbers and trends:
             </p>
           </Col>
-          <Col xs={1} />
+          <Col md={1} xs={0} />
         </Row>
 
         <br />
         <br />
         <Row>
-          <Col xs={6}>
+          <Col md={6} xs={12}>
             <h3 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               Cartesian:
             </h3>
@@ -145,7 +183,7 @@ export default function Home() {
               }}
             />
           </Col>
-          <Col xs={6}>
+          <Col md={6} xs={12}>
             <h3 className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               Histogram:
             </h3>
@@ -184,8 +222,8 @@ export default function Home() {
         <br />
         <br />
         <Row>
-          <Col xs={1} />
-          <Col xs={4}>
+          <Col md={1} xs={0} />
+          <Col md={4} xs={12}>
             <h3 className={`${ColorStyle.colorWhite1}`}>Real Time counter:</h3>
             <p className={` ${ColorStyle.colorGrey5}`}>
               Maybe have 24 hours old data is not enough; that's why we designed
@@ -198,12 +236,16 @@ export default function Home() {
               in this moment.
             </p>
           </Col>
-          <Col xs={6} style={{ display: "flex", justifyContent: "center" }}>
+          <Col
+            md={6}
+            xs={12}
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <div
               style={{
                 width: "100%",
                 margin: "auto",
-                fontSize: "2.2em",
+                fontSize: "2.7vw",
               }}
             >
               {data && data.length > 7 && (
@@ -219,13 +261,13 @@ export default function Home() {
               )}
             </div>
           </Col>
-          <Col xs={1} />
+          <Col md={1} xs={0} />
         </Row>
         <br />
         <br />
         <br />
         <Row>
-          <Col xs={2} />
+          <Col md={2} xs={0} />
           <Col>
             <Jumbotron className={`${ColorStyle.bgGrey3}`}>
               <h1>What's Covid-19?</h1>
@@ -245,7 +287,7 @@ export default function Home() {
               </Button>
             </Jumbotron>
           </Col>
-          <Col xs={2} />
+          <Col md={2} xs={0} />
         </Row>
       </Container>
     </React.Fragment>

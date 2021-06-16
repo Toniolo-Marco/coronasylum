@@ -12,45 +12,44 @@ import countries from "../utils/countries";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
     backgroundColor: "rgba(0,0,0,0)",
     padding: "20px",
     borderRadius: "5px",
 
-    "& > * .MuiInput-underline:after": {
+    "& .MuiInput-underline:after": {
       borderBottomColor: "#007bff",
     },
 
-    "& > * > .MuiAutocomplete-root": {
+    "& .MuiAutocomplete-root": {
       width: "100%",
       borderBottomColor: "#b0b0b0",
       marginTop: "auto",
       marginBottom: "auto",
     },
 
-    "& > * > * > * > .MuiFormLabel-root": {
+    "& > * > * > .MuiFormLabel-root": {
       color: "white",
     },
 
-    "& > * > * > * > * > .MuiChip-root": {
+    "& > * > * > * > .MuiChip-root": {
       backgroundColor: "#007bfc",
       color: "white",
     },
-    "& > * > * > * > * > * > .MuiSvgIcon-root": {
+    "& > * > * > * > * > .MuiSvgIcon-root": {
       color: "white",
     },
 
-    "& > * > * > * > * > .MuiInputBase-input": {
+    "& > * > * > * >  .MuiInputBase-input": {
       color: "white",
     },
 
-    "& > * > * > * > * > * > * > * > .MuiSvgIcon-root": {
+    "& > * > * > * > * > * > * > .MuiSvgIcon-root": {
       color: "white",
     },
 
     width: "100%",
 
-    "& > * + *": {
+    "&  + *": {
       marginTop: theme.spacing(3),
     },
   },
@@ -99,8 +98,8 @@ export default function Tags({
 
   return (
     <React.Fragment>
-      <div className={classes.root}>
-        <Col xs={6} style={{ display: "flex" }}>
+      <Col md={6} xs={12} style={{ display: "flex" }}>
+        <div className={classes.root}>
           <Autocomplete
             multiple
             id="tags-standard"
@@ -118,9 +117,11 @@ export default function Tags({
               />
             )}
           />
-        </Col>
+        </div>
+      </Col>
 
-        <Col xs={6}>
+      <Col md={6} xs={12}>
+        <div className={classes.root}>
           <FormControl style={{ width: "100%" }}>
             <FormGroup
               style={{
@@ -176,10 +177,9 @@ export default function Tags({
                 style={{ color: "white", width: "auto" }}
               />
             </FormGroup>
-            <FormGroup></FormGroup>
           </FormControl>
-        </Col>
-      </div>
+        </div>
+      </Col>
     </React.Fragment>
   );
 }

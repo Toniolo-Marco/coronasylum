@@ -5,8 +5,8 @@ export default function NoData() {
   return (
     <div>
       <Row style={{ marginTop: "5%", marginBottom: "5%" }}>
-        <Col xs={2} />
-        <Col>
+        <Col md={2} xs={1} />
+        <Col md={8} xs={10}>
           <Jumbotron className={`${ColorStyle.bgGrey3}`}>
             <div style={{ display: "flex" }}>
               <IoWarningOutline
@@ -28,7 +28,7 @@ export default function NoData() {
             </h5>
           </Jumbotron>
         </Col>
-        <Col xs={2} />
+        <Col md={2} xs={1} />
       </Row>
     </div>
   );

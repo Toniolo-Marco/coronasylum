@@ -22,17 +22,33 @@ export default function Login() {
   };
 
   const onFailure = (res) => console.log("[Login failed] res:", res);
-  return (
-    <div>
-      <GoogleLogin
-        clientId={clientId}
-        buttonText="Login with Google"
-        onSuccess={onSuccess}
-        onFailure={onFailure}
-        cookiePolicy={"single_host_origin"}
-        style={{ marginTop: "100px" }}
-        isSignedIn={true}
-      />
-    </div>
-  );
+  if (window.screen.availWidth < 576) {
+    return (
+      <div>
+        <GoogleLogin
+          clientId={clientId}
+          buttonText="Login"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={"single_host_origin"}
+          style={{ marginTop: "100px" }}
+          isSignedIn={true}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <GoogleLogin
+          clientId={clientId}
+          buttonText="Login with Google"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={"single_host_origin"}
+          style={{ marginTop: "100px" }}
+          isSignedIn={true}
+        />
+      </div>
+    );
+  }
 }

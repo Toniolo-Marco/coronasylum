@@ -89,7 +89,7 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={6}>
+          <Col md={6} xs={12}>
             <Chart
               data={data}
               params={{
@@ -113,7 +113,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={6}>
+          <Col md={6} xs={12}>
             <Histogram
               data={data}
               params={{
@@ -143,7 +143,7 @@ export function CreateCompound({
           </Col>
         </Row>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -175,7 +175,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -207,7 +207,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -246,7 +246,7 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={6}>
+          <Col md={6} xs={12}>
             <Chart
               data={data}
               params={{
@@ -270,7 +270,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={6}>
+          <Col md={6} xs={12}>
             <Histogram
               data={data}
               params={{
@@ -300,7 +300,7 @@ export function CreateCompound({
           </Col>
         </Row>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -321,7 +321,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -342,7 +342,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -370,8 +370,8 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={2} />
-          <Col xs={8}>
+          <Col md={2} xs={0} />
+          <Col md={8} xs={12}>
             <Chart
               data={data}
               params={{
@@ -395,10 +395,10 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={2} />
+          <Col md={2} xs={0} />
         </Row>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -419,7 +419,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -440,7 +440,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -468,8 +468,8 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={2} />
-          <Col xs={8}>
+          <Col md={2} xs={0} />
+          <Col md={8} xs={12}>
             <Histogram
               data={data}
               params={{
@@ -497,10 +497,10 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={2} />
+          <Col md={2} xs={0} />
         </Row>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -521,7 +521,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -542,7 +542,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -570,8 +570,8 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={2} />
-          <Col xs={8}>
+          <Col md={2} xs={0} />
+          <Col md={8} xs={12}>
             <Chart
               data={data}
               params={{
@@ -595,10 +595,10 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={2} />
+          <Col md={2} xs={0} />
         </Row>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -630,7 +630,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -662,7 +662,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -701,7 +701,7 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -733,7 +733,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -765,7 +765,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -804,8 +804,8 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={2} />
-          <Col xs={8}>
+          <Col md={2} xs={0} />
+          <Col md={8} xs={12}>
             <Histogram
               data={data}
               params={{
@@ -833,10 +833,10 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={2} />
+          <Col md={2} xs={0} />
         </Row>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -868,7 +868,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -900,7 +900,7 @@ export function CreateCompound({
               />
             )}
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -939,7 +939,7 @@ export function CreateCompound({
     return (
       <div>
         <Row style={{ marginTop: "20px" }}>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -960,7 +960,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{
@@ -981,7 +981,7 @@ export function CreateCompound({
               }}
             />
           </Col>
-          <Col xs={4}>
+          <Col md={4} xs={12}>
             <Chart
               data={data}
               params={{

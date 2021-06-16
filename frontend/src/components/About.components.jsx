@@ -30,7 +30,7 @@ export default function About() {
       <div>
         <Navbar />
         <Container style={{ minHeight: "100vh", paddingBottom: "2%" }}>
-          <Tabs defaultActiveKey={tab} id="uncontrolled-tab-example">
+          <Tabs defaultActiveKey={tab}>
             <Tab eventKey="api" title="API">
               <Api />
             </Tab>
@@ -44,17 +44,14 @@ export default function About() {
               <Documentation />
             </Tab>
           </Tabs>
-          <Row style={{ marginTop: "10%", marginBottom: "5%" }}>
-            <Col xs={4}>
-              <Card
-                style={{ width: "18rem" }}
-                className={`${ColorStyle.bgGrey4}`}
-              >
+          <Row style={{ marginTop: "10%" }}>
+            <Col md={4} xs={12} style={{ marginBottom: "5%" }}>
+              <Card className={`${ColorStyle.bgGrey4}`}>
                 <Card.Body>
                   <Card.Title>Non-Relational Database</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Non-relational databases are used when large quantities of
+                    complex data need to be organized.
                   </Card.Text>
                   <Button
                     variant="primary"
@@ -66,16 +63,13 @@ export default function About() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={4}>
-              <Card
-                style={{ width: "18rem" }}
-                className={`${ColorStyle.bgGrey4}`}
-              >
+            <Col md={4} xs={12} style={{ marginBottom: "5%" }}>
+              <Card className={`${ColorStyle.bgGrey4}`}>
                 <Card.Body>
                   <Card.Title>What's an API?</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    A set of definitions and protocols for building and
+                    integrating application software.
                   </Card.Text>
                   <Button
                     variant="primary"
@@ -87,11 +81,8 @@ export default function About() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={4}>
-              <Card
-                style={{ width: "18rem" }}
-                className={`${ColorStyle.bgGrey4}`}
-              >
+            <Col md={4} xs={12} style={{ marginBottom: "5%" }}>
+              <Card className={`${ColorStyle.bgGrey4}`}>
                 <Card.Body>
                   <Card.Title>DBMS</Card.Title>
                   <Card.Text>
@@ -175,7 +166,7 @@ function Database() {
             It is faster than a normal DB and even simple. MongoDB is a NoSQL
             database and uses filters to execute queries. It stores data in
             JSON-like documents and it does not require the use of foreign keys.
-            In this way the DB is composed of several tables that are not
+            In this way the DB is composed of several documents that are not
             strictly linked to each other.
           </p>
         </Col>
