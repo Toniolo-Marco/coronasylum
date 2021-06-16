@@ -26,8 +26,8 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/About/:tab" component={About} />
-            <Route path="/Explore" component={Explore} />
+            <Route path="/about/:tab" component={About} />
+            <Route path="/explore" component={Explore} />
           </Switch>
         </Router>
       </Authentication.Provider>

@@ -16,9 +16,9 @@ import {
 
 const initialActive = {
   API: false,
-  Database: false,
-  Developer: false,
-  Documentaion: false,
+  database: false,
+  developer: false,
+  documentaion: false,
 };
 
 export default function About() {
@@ -199,10 +199,11 @@ function Developer() {
             className={` ${ColorStyle.colorGrey5}`}
           >
             Hi, my name is Marco, I'm 19 and I live in Italy. CoronAsylum is the
-            project for my final high school exam. Developing this web-app allowed
-            me to learn a lot of new aspects of webapps coding. Anyway my goal was not only to learn, but 
-            to do something useful for everyone: create a tool
-            that anyone, from anywhere in the world, could use.
+            project for my final high school exam. Developing this web-app
+            allowed me to learn a lot of new aspects of webapps coding. Anyway
+            my goal was not only to learn, but to do something useful for
+            everyone: create a tool that anyone, from anywhere in the world,
+            could use.
             <br />
             <br />A special thanks goes to my cousin, Umberto, who was able to
             advise me in the most critical parts of the development. Moreover,
@@ -235,22 +236,23 @@ function Developer() {
             warehouse.
             <br />
             <br />
-            In the fourth year I spent my internship in a Web
-            Marketing company. They mainly deal with SEO positioning, e-commerce
-            and marketing strategies. There I learnt{" "}
-            <a href="https://wordpress.com/">WordPress</a> and its huge ecosystem.
-            In particular, I have dedicated myself to several e-commerce websites,
-            publishing hundreds of articles and customizing the aesthetics with
-            CSS. Initially use WordPress was complicated, in fact it is about
-            configuration and settings, not coding at all. However, this last
-            experience helped me find work the following year.
+            In the fourth year I spent my internship in a Web Marketing company.
+            They mainly deal with SEO positioning, e-commerce and marketing
+            strategies. There I learnt{" "}
+            <a href="https://wordpress.com/">WordPress</a> and its huge
+            ecosystem. In particular, I have dedicated myself to several
+            e-commerce websites, publishing hundreds of articles and customizing
+            the aesthetics with CSS. Initially use WordPress was complicated, in
+            fact it is about configuration and settings, not coding at all.
+            However, this last experience helped me find work the following
+            year.
             <br />
             <br />
-            During the summer I worked for three months in another
-            company that designs websites. There I exploited my skills and created
-            dozens of sites for companies all over Italy by myself.
-            Unfortunately, due to the covid outbreak, things got complicated and I wasn't able to extend 
-            my experience further.
+            During the summer I worked for three months in another company that
+            designs websites. There I exploited my skills and created dozens of
+            sites for companies all over Italy by myself. Unfortunately, due to
+            the covid outbreak, things got complicated and I wasn't able to
+            extend my experience further.
           </p>
         </Col>
       </Row>

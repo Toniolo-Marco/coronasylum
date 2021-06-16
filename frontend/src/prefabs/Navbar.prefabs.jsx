@@ -18,7 +18,7 @@ export default function Navbar() {
             <NB.Brand href="/">CoronAsylum</NB.Brand>
             <Nav className="mr-auto">
               <Nav.Item>
-                <Nav.Link href="/Explore">Explore</Nav.Link>
+                <Nav.Link href="/explore">Explore</Nav.Link>
               </Nav.Item>
               <NavDropdown
                 className={`${NavbarStyle.navitem} ${NavbarStyle.dropdownmenu}`}
@@ -29,14 +29,14 @@ export default function Navbar() {
                 <NavDropdown.Item eventKey="4.1" href="/about/API">
                   API
                 </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2" href="/about/Database">
+                <NavDropdown.Item eventKey="4.2" href="/about/database">
                   Database
                 </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.3" href="/about/Developer">
+                <NavDropdown.Item eventKey="4.3" href="/about/developer">
                   Developer
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item eventKey="4.4" href="/about/Documentation">
+                <NavDropdown.Item eventKey="4.4" href="/about/documentation">
                   Documentation & Contacts
                 </NavDropdown.Item>
               </NavDropdown>

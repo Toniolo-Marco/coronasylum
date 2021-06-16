@@ -12,7 +12,10 @@ require("./conf/db.conf").default(uri("coviddata"));
 
 // Application
 const corsOptions = {
-  origin: [/http:\/\/localhost(?::\d{1,5})?/],
+  origin: [
+    /http:\/\/localhost(?::\d{1,5})?/,
+    /https:\/\/coronasylum-29bad.web.app/,
+  ],
 };
 const express = require("express");
 const app = express();
