@@ -32,13 +32,14 @@ export default function Home() {
   useEffect(() => {
     auth &&
       downloadData(query, auth).then((res) => {
+        console.log(auth);
         let arr = [];
         if (res.data) {
           arr = res.data;
         }
         setData(arr);
       });
-  }, [auth]);
+  }, []);
 
   useEffect(() => {
     if (data.length !== 0) {

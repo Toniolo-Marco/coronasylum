@@ -14,6 +14,7 @@ export default function NotAuthorized() {
     >
       <Row
         style={{
+          width: "100%",
           marginTop: "auto",
           marginBottom: "auto",
         }}
