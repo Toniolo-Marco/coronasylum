@@ -15,8 +15,8 @@ import {
 } from "../index.import.js";
 
 const initialActive = {
-  API: false,
-  database: false,
+  api: false,
+  db: false,
   developer: false,
   documentaion: false,
 };
@@ -31,16 +31,16 @@ export default function About() {
         <Navbar />
         <Container style={{ minHeight: "100vh", paddingBottom: "2%" }}>
           <Tabs defaultActiveKey={tab} id="uncontrolled-tab-example">
-            <Tab eventKey="API" title="API">
+            <Tab eventKey="api" title="API">
               <Api />
             </Tab>
-            <Tab eventKey="Database" title="Database">
+            <Tab eventKey="db" title="Database">
               <Database />
             </Tab>
-            <Tab eventKey="Developer" title="Developer">
+            <Tab eventKey="developer" title="Developer">
               <Developer />
             </Tab>
-            <Tab eventKey="Documentation" title="Documentation">
+            <Tab eventKey="documentation" title="Documentation">
               <Documentation />
             </Tab>
           </Tabs>
@@ -274,12 +274,11 @@ function Documentation() {
             style={{ marginTop: "2%" }}
             className={` ${ColorStyle.colorGrey5}`}
           >
-            for security reasons the code is not yet public. You can contact me
-            at this email:{" "}
-            <a href="mailto:coronasylum@gmail.com">coronasylum@gmail.com</a> if
-            you want to receive a copy, or wait for it to be published here.
-            Inside the email I kindly ask you to specify the reason for the
-            request. Otherwise your email will not receive a reply.
+            The code is public{" "}
+            <a href="https://github.com/Toniolo-Marco/coronasylum.git">here</a>,
+            on gitHub. You can also contact me at this email:{" "}
+            <a href="mailto:coronasylum@gmail.com">coronasylum@gmail.com</a> for
+            any advice.
             <br />
             <br />
             In case of a bug or any problem with the site, I invite you to
@@ -287,7 +286,9 @@ function Documentation() {
             <br />
             <br />
             For any other information do not hesitate to contact us, we will try
-            to reply as soon as possible.
+            to reply as soon as possible. We kindly ask you not to send
+            unrelated emails or spam. Otherwise your email will not receive a
+            reply.
           </p>
         </Col>
       </Row>

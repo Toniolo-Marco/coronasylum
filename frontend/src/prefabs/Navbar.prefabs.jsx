@@ -26,10 +26,10 @@ export default function Navbar() {
                 title="About"
                 id="nav-dropdown"
               >
-                <NavDropdown.Item eventKey="4.1" href="/about/API">
+                <NavDropdown.Item eventKey="4.1" href="/about/api">
                   API
                 </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2" href="/about/database">
+                <NavDropdown.Item eventKey="4.2" href="/about/db">
                   Database
                 </NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.3" href="/about/developer">
