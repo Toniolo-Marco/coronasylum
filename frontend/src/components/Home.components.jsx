@@ -77,8 +77,8 @@ export default function Home() {
               <p
                 className={`${TextStyle.txtcenterjustify} ${ColorStyle.colorGrey5}`}
               >
-                In this site you have an easy access to Covid-19 data from every
-                country of the world. This is a non-profit project, realized in
+                On this site you have an easy access to Covid-19 data from every
+                country in the world. This is a non-profit project, realized in
                 may 2021. Our mission is to spread official information in a
                 clear way, understandable by everyone.
                 <br /> <br />
@@ -158,9 +158,9 @@ export default function Home() {
               Cartesian:
             </h3>
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
-              quickly understand the trend
+              you can quickly understand the trend
             </p>
-
+            y
             <Chart
               data={data}
               params={{
@@ -189,7 +189,7 @@ export default function Home() {
               Histogram:
             </h3>
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
-              compare total cases, recovered and deaths
+              you can compare total cases, recovered and deaths
             </p>
             <Histogram
               data={data}
@@ -227,14 +227,14 @@ export default function Home() {
           <Col md={4} xs={12}>
             <h3 className={`${ColorStyle.colorWhite1}`}>Real Time counter:</h3>
             <p className={` ${ColorStyle.colorGrey5}`}>
-              Maybe have 24 hours old data is not enough; that's why we designed
-              a real time counter. This component allows you to know what's
-              going on (more or less). It is based on the trend of the last
-              week, therefore it can incerease and decrease too! To have an
-              accurate number we suggest you to refresh the page daily while our
-              dataset refresh countries one by one at 1:00AM(UTC+0). For
-              example, on the right you have the counter of active case in Italy
-              in this moment.
+              Maybe having 24 hours old data is not enough; that's why we
+              designed a real time counter. This component allows you to know
+              what's going on (more or less). It is based on the trend of the
+              latest week, therefore it can both incerease and decrease too! To
+              have an accurate number we recommend refreshing the page daily
+              while our dataset refreshes countries one by one at 1:00AM(UTC+0).
+              For example, on the right you have the counter of active cases in
+              Italy in this moment.
             </p>
           </Col>
           <Col
@@ -276,7 +276,7 @@ export default function Home() {
                 It's remarkable for everyone to be aware about what's going on
                 out there. The World Health Organization wrote articles on
                 prevention, symptoms and myth busters. You can learn more on the
-                WHO's official website pressing the button below!
+                WHO's official website by pressing the button below!
               </h5>
               <br />
               <Button
