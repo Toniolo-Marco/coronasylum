@@ -35,4 +35,4 @@ require("./services/api.service");
 require("./services/consumer.service");
 require("./services/producer.service");
 
-exports.app = functions.https.onRequest(app);
+exports.app = functions.runWith({ timeoutSeconds: 540 }).https.onRequest(app);

@@ -3,6 +3,7 @@ const { default: DayData } = require("../models/daydata.model");
 const { default: UserStats } = require("../models/userstats.model");
 
 const { auth } = require("../services/auth.service");
+const { runCountryTotalDump } = require("../services/update.service");
 
 exports.getDataByCountry = async (req, res) => {
   let profile = {};
@@ -29,6 +30,7 @@ exports.getDataByCountry = async (req, res) => {
     res.status(401).send("No user");
   } else {
     countryModel.findOne({ Slug: req.params.country }).then((countryspec) => {
+      runCountryTotalDump(countryspec.toObject());
       DayData.find({
         $and: [
           { Date: { $not: { $eq: "2021-03-07T00:00:00.000+00:00" } } },
