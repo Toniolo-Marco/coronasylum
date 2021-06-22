@@ -160,7 +160,7 @@ export default function Home() {
             <p className={`${TextStyle.txtcenter} ${ColorStyle.colorWhite1}`}>
               you can quickly understand the trend
             </p>
-            y
+
             <Chart
               data={data}
               params={{
